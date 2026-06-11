@@ -234,7 +234,7 @@ td a{color:var(--ink);font-weight:600}td a:hover{color:var(--accent2)}
  <tr><th style="width:90px">Time</th><th style="width:120px">Slot</th><th>What we&#39;ll do</th></tr>
  <tr><td>14:00–14:15</td><td>Welcome</td><td>Round-table intros · workshop frame · GCSE prompt framework</td></tr>
  <tr><td>14:15–15:00</td><td><span class="badge blue">HOUR 1 · DEMO 1</span></td><td>Ex 1 + Ex 3 combined — Daily Briefing → Researcher → one-page HTML visual view</td></tr>
- <tr><td>15:00–15:30</td><td><span class="badge blue">HOUR 1 · DEMO 2</span></td><td>Ex 4 — Quick Cowork PPT → Contoso Mining corporate template → waterfall + 3D chart → slice across Word, Excel, HTML</td></tr>
+ <tr><td>15:00–15:30</td><td><span class="badge blue">HOUR 1 · DEMO 2</span></td><td>Ex 4 — Quick Cowork PPT → Contoso Mining corporate template → waterfall + clustered column chart → slice across Word, Excel, HTML</td></tr>
  <tr><td>15:30–15:40</td><td>Break</td><td>Coffee</td></tr>
  <tr><td>15:40–16:15</td><td><span class="badge blue">HOUR 1 · DEMO 3</span></td><td>Ex 9 + Ex 10 combined — Monthly-closing overhead cascade + visual CV shortlist</td></tr>
  <tr><td>16:15–17:10</td><td><span class="badge green">HOUR 2 · HANDS-ON</span></td><td>Ex 2 — Build from scratch: Cowork → 1-page Word + exec email + meeting invite + live HTML dashboard. Participants run their own data through the same prompt skeleton.</td></tr>
@@ -437,7 +437,6 @@ The HTML must:
 - Every claim references a source by a numbered footnote, listed at the bottom.
 
 Stop and show me the rendered HTML for approval before saving.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout good"><b>Why this beats the 12-page report:</b> the GM doesn&#39;t read 12 pages. A one-screen colour-coded view tells the same story in 60 seconds — and travels well into a Teams chat or an email.</div>
 </div>
 </div>
 
@@ -462,7 +461,7 @@ Stop and show me the rendered HTML for approval before saving.<button class="cop
 
 <section id="ex4">
 <div class="modulehead"><div class="num">4</div><h2>Exercise 4 · Quick Cowork Deck → Corporate Template → Slice &amp; Dice<small>Cowork · PowerPoint · Word · Excel</small></h2></div>
-<div class="callout good"><b>HOUR 1 · DEMO 2 (combined flow):</b> Cowork drafts a quick 6-slide pre-read; you reapply the Contoso Mining corporate template; Copilot inserts a waterfall + a 3D column chart; then we slice the SAME data into Word, Excel, and a one-page HTML — no narrative re-typing.</div>
+<div class="callout good"><b>HOUR 1 · DEMO 2 (combined flow):</b> Cowork drafts a quick 6-slide pre-read; you reapply the Contoso Mining corporate template; Copilot inserts a waterfall + a clustered column chart; then we slice the SAME data into Word, Excel, and a one-page HTML — no narrative re-typing.</div>
 
 <div class="card">
 <h3>4.1 · Step 1 — Cowork drafts a quick 6-slide pre-read</h3>
@@ -470,7 +469,7 @@ Stop and show me the rendered HTML for approval before saving.<button class="cop
 
 <div class="activity">
  <div class="head"><span class="num">Task 4.1</span><span class="file">👥 Cowork · quick PPT draft</span></div>
- <h4>One prompt → 6-slide pre-read + waterfall + 3D bar chart</h4>
+ <h4>One prompt → 6-slide pre-read + waterfall + clustered column chart</h4>
  <div class="prompt">Cowork — quick pre-read for the Director of Operations.
 
 Sources: /02 Contoso_KPI_Dashboard.xlsx and /05 Contoso_Strategic_Memo.docx.
@@ -485,7 +484,6 @@ Slide 5 — Safety (TRIR) by site: bar chart with the FY26 target line overlaid.
 Slide 6 — &quot;Three things to decide&quot;: 3 bullets, named owners.
 
 Save as Monthly_Review.pptx in OneDrive. Stop before any external action.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout"><b>Why waterfall + clustered column matter:</b> the Director of Operations wants to see where the variance came from (waterfall) and how sites compare over time (clustered column). Copilot inserts native PowerPoint charts — fully editable, not images.</div>
 </div>
 </div>
 
@@ -500,8 +498,6 @@ Save as Monthly_Review.pptx in OneDrive. Stop before any external action.<button
  <li>Open the <b>Copilot</b> pane and paste the prompt below to recolour the chart series and add the corporate footer.</li>
  </ol>
  <div class="prompt">Recolour every chart series using ONLY the corporate theme colour palette that is currently applied. Do not flatten any chart to an image — keep them native and editable. Add a slide footer to every slide with &quot;Confidential — Internal Use Only&quot;, the file name, and the page number. Do not change the data, the chart types, or the slide titles.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout"><b>Reality check:</b> Copilot reliably reapplies the theme + recolours chart series + adds the footer. It is <i>not</i> reliable at moving existing chart objects into specific master placeholders — if the layout shifts on a slide, expect a 1-2 minute manual nudge. That is normal. Do not let it block the demo.</div>
- <div class="callout good"><b>The win:</b> the deck looks like it came from the Contoso Mining brand team — not from a generic Designer template.</div>
 </div>
 </div>
 
@@ -529,7 +525,6 @@ Plan: in a new sheet &quot;Exec_View&quot;, build a pivot of Overburden Removed 
  <div class="head"><span class="num">Task 4.3c</span><span class="file">🌐 Cowork · HTML one-pager</span></div>
  <h4>Same story → one-page HTML view (for sharing in Teams)</h4>
  <div class="prompt">Cowork — take the data behind /Monthly_Review.pptx and produce a self-contained Project_Review.html. Contoso Mining brand colours. Layout: 4 KPI tiles (one per top metric), a waterfall chart in SVG, a small RAG table by site, and a single &quot;Recommendation&quot; ribbon at the bottom. All CSS inline. No JavaScript. Save to OneDrive.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout"><b>Closing line for the audience:</b> &quot;Same data. Four surfaces — PPT, Word, Excel, HTML. Copilot kept the numbers consistent across all four; we did not re-type a single figure.&quot;</div>
 </div>
 </div>
 
@@ -561,12 +556,12 @@ Slides: 1 Title · 2 Executive snapshot · 3 Where we stand today · 4 What is c
 
 
 <section id="ex5">
-<div class="modulehead"><div class="num">5</div><h2>Exercise 5 · Vendor vs KAK Comparison — Visual Infographic Table<small>Copilot Create · Designer · plus a hyperlink-back-to-source trick</small></h2></div>
-<div class="callout good"><b>The Petrosea-specific play:</b> instead of a generic poster, use Copilot Create to compare 3–4 tendered vendors against the KAK (Kerangka Acuan Kerja / Terms of Reference) — as a single, board-ready, colour-coded infographic table. One A4. Decision-ready.</div>
+<div class="modulehead"><div class="num">5</div><h2>Exercise 5 · Vendor vs KAK Comparison — Visual Infographic Table<small>Cowork (scores) → Copilot Create (renders) · plus a hyperlink-back-to-source trick</small></h2></div>
+<div class="callout good"><b>The Petrosea-specific play:</b> compare 3–4 tendered vendors against the KAK (Kerangka Acuan Kerja / Terms of Reference) as a single, board-ready, colour-coded infographic table. One A4. Decision-ready.</div>
 
 <div class="card">
 <h3>5.1 · The new main — Vendor vs KAK comparison infographic (two-step flow)</h3>
-<p class="lead">Important: Copilot Create / Designer is a <b>layout</b> tool — it does not deeply read 4 long vendor PDFs and reason cell-by-cell. So we split the play in two: <b>Cowork scores</b> the vendors against the KAK, then <b>Create renders</b> the resulting table as the infographic. Both steps are quick.</p>
+<p class="lead">Copilot Create / Designer is a <b>layout</b> tool — it does not deeply read 4 long vendor PDFs and reason cell-by-cell. So we split the play in two: <b>Cowork scores</b> the vendors against the KAK, then <b>Create renders</b> the resulting table as the infographic.</p>
 
 <div class="activity">
  <div class="head"><span class="num">Task 5.1a</span><span class="file">👥 Cowork · score vendors</span></div>
@@ -588,7 +583,6 @@ Step 2 (after I confirm) — score every vendor 1–5 against every criterion, w
 Step 3 — output a markdown table I can copy into the next prompt: KAK Criterion · Weight · Vendor A · Vendor B · Vendor C · Vendor D (each cell = score + colour code: 🟢 ≥4, 🟡 =3, 🔴 ≤2). Plus a one-line recommendation, runner-up, and any disqualified vendor with the KAK clause failed.
 
 Flag anything unclear with [VERIFY]. Do not invent scores. Stop and confirm the criteria list before scoring.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout"><b>If you don&#39;t have real vendor PDFs handy:</b> ask Cowork to fabricate four demo vendors against a simple sample KAK — useful for the live demo but make the disclaimer clear in the room.</div>
 </div>
 
 <div class="activity">
@@ -615,13 +609,12 @@ Below the table, three small cards: &quot;Recommended vendor&quot; (one reason),
 At the bottom, a bronze ribbon footer: &quot;RECOMMENDATION: award to Vendor [X] · CONDITIONS: [2 conditions] · DECISION SLA: 5 working days&quot; with today&#39;s date on the right.
 
 Style: clean industrial sans-serif, thin outline icons only (excavator, helmet, document, leaf). No clip-art, no photos of people. Fill the entire A4 page edge to edge.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout good"><b>Why the two-step flow is better than &quot;one prompt does it all&quot;:</b> Cowork is the deep reader (PDFs + KAK + scoring); Create is the visual designer. Asking Designer to do both ends in invented scores. Two prompts, two minutes, board-ready output.</div>
 </div>
 </div>
 
 <div class="card">
 <h3>5.2 · The hyperlink-back-to-source trick (works on any Copilot-generated HTML)</h3>
-<p class="lead">For the GM&#39;s question — &quot;can we make each row clickable back to the source vendor PDF in SharePoint?&quot; — yes, and the prompt is one extra line.</p>
+<p class="lead">For the GM&#39;s question — &quot;can we make each row clickable back to the source vendor PDF in SharePoint?&quot; — yes. Reference each file with <code>/</code> so Copilot has the Graph file IDs to build the SharePoint URLs.</p>
 <div class="activity">
  <div class="head"><span class="num">Tip 5.2</span><span class="file">🔗 Cowork · HTML with SharePoint hyperlinks</span></div>
  <h4>Re-render the comparison as a clickable HTML view</h4>
@@ -638,7 +631,6 @@ In the rendered HTML:
 - Each vendor column header is a clickable hyperlink to that vendor&#39;s proposal PDF (use the canonical SharePoint URL for each /-referenced file).
 - Each KAK row label is a clickable hyperlink to the KAK document.
 - Save the HTML to my OneDrive and show me the file URL.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout"><b>How it works under the hood:</b> when you reference files with <code>/</code>, Copilot has each file&#39;s Microsoft Graph ID and can build canonical <code>https://contoso.sharepoint.com/...</code> URLs. Anyone with permission to the source can click straight through; anyone without permission gets &quot;Access Denied&quot; — i.e. governance is preserved. <b>Without the / references, Copilot has to guess the URL — and that is unreliable.</b></div>
 </div>
 </div>
 
@@ -843,7 +835,6 @@ For each row in the workbook:
 5. Create an Outlook DRAFT (do not send) to the address in the Email column.
 
 When all 8 drafts are ready, give me a summary table: Department · Owner · Variance % · Tone used · Draft link. Stop and confirm before sending anything.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout good"><b>Why Cowork beats classic mail-merge for this:</b> the body, the variance commentary, the tone, AND the embedded table differ per department. Classic merge can&#39;t do that. Cowork can — and it stops at &quot;Drafts&quot; so Finance signs off before anything is sent.</div>
 </div>
 </div>
 
@@ -867,7 +858,7 @@ For each row: write a personal 180-word cascade letter — production tonnes, eq
 
 <section id="ex10">
 <div class="modulehead"><div class="num">10</div><h2>Exercise 10 · CV Screening — Visual Shortlist (Colourful Table / Infographic)<small>Cowork · SharePoint folder · Copilot Create</small></h2></div>
-<div class="callout good"><b>HOUR 1 · DEMO 3b (combined with the finance cascade):</b> HR is capped at 5 CV uploads in most chatbots. Point Cowork at a SharePoint folder — no file cap. The new ask: don&#39;t return a wall of markdown. Render the shortlist as a colour-coded comparison TABLE or an infographic the hiring manager can scan in 15 seconds.</div>
+<div class="callout good"><b>HOUR 1 · DEMO 3b (combined with the finance cascade):</b> HR is capped at 5 CV uploads in most chatbots. Point Cowork at a SharePoint folder — no file cap. Don&#39;t return a wall of markdown — render the shortlist as a colour-coded comparison TABLE or an infographic the hiring manager can scan in 15 seconds.</div>
 
 <div class="card">
 <h3>10.1 · Prep — drop the CVs in SharePoint (same as before)</h3>
@@ -899,7 +890,6 @@ Do all of the following:
  - Below the table, three small callout boxes: &quot;Top 3 — interview first&quot;, &quot;Next 3 — second look&quot;, &quot;Pass with reason&quot; (one line each).
  - For the top candidate, draft (DO NOT send) an introductory email inviting them to a 30-min screening call; save as Outlook DRAFT.
 3. Stop before any external send. Flag anything unclear with [VERIFY]. Do not fabricate qualifications.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout good"><b>The win:</b> the hiring manager sees the entire shortlist in one glance — not a 6-page narrative. The colour-coded table forces explicit scoring on every criterion.</div>
 </div>
 
 <div class="activity">
@@ -1008,7 +998,6 @@ Produce four artefacts: win-themes (1 page), bid executive summary (2 pages), co
  <li><b>5 min</b> — workshop facilitator demos the winning use case LIVE in Copilot, using GCSE (Goal · Context · Source · Expectations) on the spot.</li>
  <li><b>3 min</b> — winning GM gets the gimmick (Copilot-branded notebook, USB-C hub, or your in-house giveaway). Other use cases captured on the wall — workshop owner takes a photo for a follow-up note.</li>
  </ol>
- <div class="callout good"><b>Why this works:</b> it converts the workshop from &quot;watching us demo&quot; into &quot;you own a real use case&quot;. The GM leaves with their own win, not ours.</div>
 </div>
 </div>
 
