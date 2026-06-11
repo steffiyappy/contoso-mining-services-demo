@@ -179,7 +179,6 @@ td a{color:var(--ink);font-weight:600}td a:hover{color:var(--accent2)}
  <tr><td>05</td><td><a href="samples/05 Contoso_Strategic_Memo.docx">05 Contoso_Strategic_Memo.docx</a></td><td><span class="badge yellow">Word</span></td><td>Ex 4, Extra C, Extra D</td><td>Strategic memo used to ground the PowerPoint draft + Word doc Q&amp;A demo</td></tr>
  <tr><td>06</td><td><a href="samples/CVs/">samples/CVs/ (12 files)</a></td><td><span class="badge yellow">Word ×12</span></td><td>Ex 10</td><td>12 candidate CVs for the Mining Project Superintendent role — upload as a SharePoint folder</td></tr>
  <tr><td>07</td><td><a href="samples/06 Contoso_Merger_Discussion_Transcript.docx">06 Contoso_Merger_Discussion_Transcript.docx</a></td><td><span class="badge yellow">Word</span></td><td>Ex 6</td><td>Sample Potential Merger meeting transcript — used by Teams Recap and Word minutes</td></tr>
- <tr><td>08</td><td><a href="samples/08 Contoso_Overhead_By_Department.xlsx">08 Contoso_Overhead_By_Department.xlsx</a></td><td><span class="badge blue">Excel</span></td><td>Ex 9 (Petrosea main)</td><td>Monthly overhead — 8 cost-centre rows with budget · actual · variance % · top cost driver · YTD variance · dept-head email — drives the personalised monthly-closing cascade</td></tr>
 </table>
 <div class="callout warn" style="margin-top:14px"><b>Why OneDrive / SharePoint?</b> M365 Copilot can only analyse files stored in OneDrive or SharePoint. Files on your local Desktop are invisible to Copilot.</div>
 </div>
@@ -227,22 +226,6 @@ td a{color:var(--ink);font-weight:600}td a:hover{color:var(--accent2)}
  <div class="num" style="background:linear-gradient(135deg,var(--brand),var(--accent));font-size:14px">▶</div>
  <h2>The Story<small>One GM workday · eight Copilot moments · ends with a live dashboard</small></h2>
 </div>
-
-<div class="card" style="border-left:4px solid var(--brand);background:linear-gradient(135deg,rgba(180,83,9,.08),rgba(245,158,11,.05))">
-<h3 style="margin-top:0">🗓️ Run-of-show for the Contoso Mining GM session — 7 July 2026, 2:00pm (hard stop 5:30pm)</h3>
-<table style="margin:0">
- <tr><th style="width:90px">Time</th><th style="width:120px">Slot</th><th>What we&#39;ll do</th></tr>
- <tr><td>14:00–14:15</td><td>Welcome</td><td>Round-table intros · workshop frame · GCSE prompt framework</td></tr>
- <tr><td>14:15–15:00</td><td><span class="badge blue">HOUR 1 · DEMO 1</span></td><td>Ex 1 + Ex 3 combined — Daily Briefing → Researcher → one-page HTML visual view</td></tr>
- <tr><td>15:00–15:30</td><td><span class="badge blue">HOUR 1 · DEMO 2</span></td><td>Ex 4 — Quick Cowork PPT → Contoso Mining corporate template → waterfall + clustered column chart → slice across Word, Excel, HTML</td></tr>
- <tr><td>15:30–15:40</td><td>Break</td><td>Coffee</td></tr>
- <tr><td>15:40–16:15</td><td><span class="badge blue">HOUR 1 · DEMO 3</span></td><td>Ex 9 + Ex 10 combined — Monthly-closing overhead cascade + visual CV shortlist</td></tr>
- <tr><td>16:15–17:10</td><td><span class="badge green">HOUR 2 · HANDS-ON</span></td><td>Ex 2 — Build from scratch: Cowork → 1-page Word + exec email + meeting invite + live HTML dashboard. Participants run their own data through the same prompt skeleton.</td></tr>
- <tr><td>17:10–17:30</td><td><span class="badge yellow">BONUS</span></td><td>🏆 Bring-Your-Own Use Case competition — vote &amp; demo the winner live</td></tr>
-</table>
-<div class="callout" style="margin-top:14px"><b>Everything else on this page (Ex 5 — Vendor vs KAK infographic · Ex 6 — Teams recap → Word minutes · Ex 7 — Excel Power Hour · Ex 8 — Analyst Agent · Extras) is for self-paced exploration after the session.</b> Pick what matters most to you.</div>
-</div>
-
 
 <div style="display:grid;grid-template-columns:220px 1fr;gap:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:24px">
  <div style="background:linear-gradient(180deg,var(--sidebar-a),var(--sidebar-b));padding:24px 18px;display:flex;flex-direction:column;gap:11px">
@@ -411,249 +394,223 @@ Stop and confirm before sending the email or scheduling the meeting.<button clas
 
 
 <section id="ex3">
-<div class="modulehead"><div class="num">3</div><h2>Exercise 3 · Market Intelligence — as a Visual HTML View<small>Researcher → Cowork → one-page HTML</small></h2></div>
-<div class="callout good"><b>HOUR 1 · DEMO 1 (combined flow):</b> Researcher pulls the intelligence; Cowork turns the wall-of-text into a one-page HTML view a GM can scan in 60 seconds. No 12-page report.</div>
+<div class="modulehead"><div class="num">3</div><h2>Exercise 3 · Market Intelligence — Critique &amp; Model Council<small>Researcher</small></h2></div>
+<div class="callout good"><b>When to do this:</b> Right after the daily briefing, when the GM needs deep market intelligence. Open Microsoft 365 Copilot → <b>Researcher</b>.</div>
 
 <div class="card">
-<h3>3.1 · The new main flow — Researcher feeds Cowork; Cowork renders the view</h3>
-<p class="lead">Open <b>Microsoft 365 Copilot Chat</b> → switch to <b>Cowork</b>. Paste the single prompt below. Cowork chains Researcher (for the peer scan) into Copilot (for the visual HTML one-pager) — then drops the file in OneDrive.</p>
+<h3>3.1 · Critique (Auto) — the default for sector intelligence</h3>
+<p class="lead">Researcher on <b>Auto</b> runs <b>Critique</b> mode — a dual-model setup where one model drafts, a second self-reviews the sources, and only the verified report is returned.</p>
 
 <div class="activity">
- <div class="head"><span class="num">Task 3.1</span><span class="file">👥 Cowork · multi-step</span></div>
- <h4>One prompt → researched peer scan → visual one-page HTML view</h4>
- <div class="prompt">Cowork — for General Manager · Operations at Contoso Mining Services.
-
-Step 1 — call Researcher on Auto (Critique mode). Question: in the Mining Services & EPC sector in Indonesia, benchmark Petrosea, United Tractors / Pamapersada, Bukit Makmur (BUMA), Saptaindra Sejati, Thiess Indonesia, Macmahon. For each peer capture: market share, FY25 revenue growth, EBITDA margin, fleet / capacity scale, recent contract wins, ESG posture, digital maturity. Cite every source.
-
-Step 2 — take the Researcher output and generate a self-contained HTML file called &quot;Contoso Mining – Peer Snapshot.html&quot;. Save to OneDrive.
-
-The HTML must:
-- Use Contoso Mining brand colours (bronze #b45309 and amber #f59e0b) on white, with a small navy accent for headings — serious, board-ready.
-- Have a header band with title &quot;Peer Snapshot · Q3 FY26&quot; and today&#39;s date.
-- Show a single comparison TABLE with one row per peer, columns: Peer · Share % · Growth · EBITDA % · Fleet / Capacity · Recent Win · ESG · Digital — use colour-coded cells (green / amber / red) for the relative ranking on each column. Add a tiny &quot;⬆/⬇/▬&quot; arrow on the trend cells.
-- Below the table, three small cards: &quot;Where we lead&quot;, &quot;Where we lag&quot;, &quot;Where the market is going&quot; — three bullets each, no more.
-- A footer band with a single sentence: &quot;Recommendation: [one move worth taking to the Operating Committee]&quot;.
-- All CSS inline. No JavaScript. Mobile-friendly. Maximum 400 words of body text — this is a VIEW, not a report.
-- Every claim references a source by a numbered footnote, listed at the bottom.
-
-Stop and show me the rendered HTML for approval before saving.<button class="copy" onclick="cp(this)">Copy</button></div>
-</div>
-</div>
-
-<div class="card">
-<h3>3.2 · Alternative angle — the original Researcher Critique + Model Council prompts</h3>
-<p class="lead">If you want the deep written report (the original flow), run these directly inside Researcher.</p>
-
-<div class="activity">
- <div class="head"><span class="num">Alt A</span><span class="file">🔍 Researcher · Auto (Critique)</span></div>
- <h4>Peer scan — narrative report</h4>
+ <div class="head"><span class="num">Task 3.1</span><span class="file">🔍 Researcher · Auto (Critique)</span></div>
+ <h4>Scan the Mining Services & EPC landscape in Indonesia</h4>
  <div class="prompt">Research the Mining Services & EPC sector in Indonesia. Benchmark these companies: Petrosea, United Tractors / Pamapersada, Bukit Makmur (BUMA), Saptaindra Sejati, Thiess Indonesia, Macmahon. For each one, compare market share, FY25 revenue growth, EBITDA margin, strategic focus, digital maturity, and recent material moves (M&amp;A, capex, new contracts, regulation). Include 2024–2028 market sizing with the three main growth drivers. Cite every source. Flag any section where the evidence is thin.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout">Notice the <b>citations</b> and the <b>&quot;reviewed by&quot;</b> stamp — Critique enforces source grounding before the report is shown.</div>
+</div>
 </div>
 
+<div class="card">
+<h3>3.2 · Model Council — when the decision is too important for one model</h3>
+<p class="lead">Switch the Researcher model picker to <b>Model Council</b>. Multiple frontier models reason on the same question in parallel — Researcher then reconciles them and shows where they agree, where they diverge, and which sources each one anchored on.</p>
+
 <div class="activity">
- <div class="head"><span class="num">Alt B</span><span class="file">🧑‍⚖️ Researcher · Model Council</span></div>
- <h4>Stress-test the strategic question with multiple models</h4>
- <div class="prompt">Model Council — for General Manager · Operations at Contoso Mining Services: what are the three highest-impact strategic moves we should make in the next 12 months in the Indonesian mining services & epc sector, given the peer benchmark above? For each move: rationale, evidence (cited), main risk, 90-day starter action. Show me where the models agree, where they diverge, and which one to trust on each move.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="head"><span class="num">Task 3.2</span><span class="file">🧑‍⚖️ Researcher · Model Council</span></div>
+ <h4>Stress-test the strategic question</h4>
+ <div class="prompt">Model Council — for General Manager · Operations at Contoso Mining Services: what are the three highest-impact strategic moves we should make in the next 12 months in the Indonesian mining services & epc sector, given the peer benchmark above? For each move, give: the rationale, the evidence (cited), the main risk, and a 90-day starter action. Show me where the models agree, where they disagree, and which one I should trust on each move.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout good"><b>Why Model Council matters for GMs:</b> for any decision worth more than ~USD 1M, the cost of one model being wrong dwarfs the cost of asking three. Model Council surfaces the disagreement instead of hiding it.</div>
+</div>
+</div>
+
+<div class="card">
+<h3>3.3 · Turn the research into a 1-page GM brief</h3>
+<div class="activity">
+ <div class="head"><span class="num">Task 3.3</span><span class="file">📝 Word Copilot · 1-page brief</span></div>
+ <h4>Export and refine in Word</h4>
+ <p>In the Researcher report, click <b>Export</b> → <b>Convert to Word</b>. Open the file from OneDrive. In the Word Copilot pane, paste:</p>
+ <div class="prompt">Based on the content of this document, draft a 1-page brief for General Manager · Operations at Contoso Mining Services.
+
+Structure:
+- Market headline (2 sentences, 1 number)
+- 3 competitor moves we must track
+- 3 implications for Contoso Mining Services in the next 90 days
+- 1 question to put to the Executive Committee
+
+Tone: direct, board-ready, no jargon. Max 350 words. Use [PLACEHOLDER] for anything not confirmed in the research. End with assumptions made and one open question.<button class="copy" onclick="cp(this)">Copy</button></div>
 </div>
 </div>
 </section>
 
 
 <section id="ex4">
-<div class="modulehead"><div class="num">4</div><h2>Exercise 4 · Quick Cowork Deck → Corporate Template → Slice &amp; Dice<small>Cowork · PowerPoint · Word · Excel</small></h2></div>
-<div class="callout good"><b>HOUR 1 · DEMO 2 (combined flow):</b> Cowork drafts a quick 6-slide pre-read; you reapply the Contoso Mining corporate template; Copilot inserts a waterfall + a clustered column chart; then we slice the SAME data into Word, Excel, and a one-page HTML — no narrative re-typing.</div>
+<div class="modulehead"><div class="num">4</div><h2>Exercise 4 · PowerPoint — Corporate Template, BCG/McKinsey Style<small>PowerPoint Copilot</small></h2></div>
+<div class="callout good"><b>When to do this:</b> Open a blank <b>PowerPoint</b> (powerpoint.com or desktop). If you have a corporate template (.potx), open it first so Copilot inherits your brand. Make sure <code>05 Contoso_Strategic_Memo.docx</code> and <code>02 Contoso_KPI_Dashboard.xlsx</code> are in your OneDrive.</div>
 
 <div class="card">
-<h3>4.1 · Step 1 — Cowork drafts a quick 6-slide pre-read</h3>
-<p class="lead">Open <b>Microsoft 365 Copilot Chat → Cowork</b>. Reference <code>/02 Contoso_KPI_Dashboard.xlsx</code> and <code>/05 Contoso_Strategic_Memo.docx</code>.</p>
+<h3>4.1 · Draft a BCG/McKinsey-style strategy deck</h3>
+<p class="lead">Copilot in PowerPoint drafts a deck in the &quot;one message per slide&quot; style consulting firms use — grounded on your memo and KPI workbook, and laid out on your corporate template.</p>
 
 <div class="activity">
- <div class="head"><span class="num">Task 4.1</span><span class="file">👥 Cowork · quick PPT draft</span></div>
- <h4>One prompt → 6-slide pre-read + waterfall + clustered column chart</h4>
- <div class="prompt">Cowork — quick pre-read for the Director of Operations.
-
-Sources: /02 Contoso_KPI_Dashboard.xlsx and /05 Contoso_Strategic_Memo.docx.
-
-Generate a 6-slide PowerPoint &quot;Contoso Mining – Monthly Project Review&quot;. Keep it minimal — chart + 1-line takeaway per slide, no narrative paragraphs.
-
-Slide 1 — Title.
-Slide 2 — Production scorecard: a clustered column chart of Overburden Removed (Mbcm) by site for the last 3 months, with one-line takeaway.
-Slide 3 — Variance vs plan: a WATERFALL chart showing how each site contributes to the variance vs the FY26 H2 plan (start at plan, +/- per site, end at actual). One-line takeaway.
-Slide 4 — Equipment availability: a clustered column chart of Equipment Availability % by site by month. Add data labels above the bars. One-line takeaway.
-Slide 5 — Safety (TRIR) by site: bar chart with the FY26 target line overlaid. One-line takeaway.
-Slide 6 — &quot;Three things to decide&quot;: 3 bullets, named owners.
-
-Save as Monthly_Review.pptx in OneDrive. Stop before any external action.<button class="copy" onclick="cp(this)">Copy</button></div>
-</div>
-</div>
-
-<div class="card">
-<h3>4.2 · Step 2 — Reapply the Contoso Mining corporate template</h3>
-<div class="activity">
- <div class="head"><span class="num">Task 4.2</span><span class="file">🎨 PowerPoint · Design Ideas + template</span></div>
- <h4>Push the draft into your real corporate template</h4>
- <ol>
- <li>Open <code>Monthly_Review.pptx</code> in PowerPoint Desktop.</li>
- <li><b>Design tab</b> → <b>Browse for themes</b> → pick your real Contoso Mining corporate <code>.potx</code> template. This applies the theme, fonts, colours and master layouts.</li>
- <li>Open the <b>Copilot</b> pane and paste the prompt below to recolour the chart series and add the corporate footer.</li>
- </ol>
- <div class="prompt">Recolour every chart series using ONLY the corporate theme colour palette that is currently applied. Do not flatten any chart to an image — keep them native and editable. Add a slide footer to every slide with &quot;Confidential — Internal Use Only&quot;, the file name, and the page number. Do not change the data, the chart types, or the slide titles.<button class="copy" onclick="cp(this)">Copy</button></div>
-</div>
-</div>
-
-<div class="card">
-<h3>4.3 · Step 3 — Slice &amp; Dice the SAME data into Word, Excel, and HTML</h3>
-<p class="lead">The Director of Operations wants the slide story in three other formats. Same data, four surfaces — no re-keying.</p>
-
-<div class="activity">
- <div class="head"><span class="num">Task 4.3a</span><span class="file">📝 Word Copilot · 1-page brief</span></div>
- <h4>Same story → 1-page Word brief (with embedded chart, not narrative)</h4>
- <div class="prompt">Open a blank Word document. In the Copilot pane reference /Monthly_Review.pptx and paste:
-
-Build a 1-page Word brief from this deck. Format: title, 4 KPI tiles at the top (one row), a single embedded chart (the WATERFALL from slide 3) in the middle, and a 3-row decision table at the bottom (Decision · Owner · Due). Maximum 120 words of body text. No long paragraphs. No re-narration of the chart.<button class="copy" onclick="cp(this)">Copy</button></div>
-</div>
-
-<div class="activity">
- <div class="head"><span class="num">Task 4.3b</span><span class="file">📊 Excel Copilot · pivot view</span></div>
- <h4>Same story → an executive pivot view in Excel</h4>
- <div class="prompt">Open /02 Contoso_KPI_Dashboard.xlsx in Excel. In the Copilot pane switch to Plan mode and paste:
-
-Plan: in a new sheet &quot;Exec_View&quot;, build a pivot of Overburden Removed and Equipment Availability % — one row per site, one column per month — with conditional formatting (green / amber / red) on variance vs FY26 H2 target. Add a waterfall chart of the FY26 H2 variance below the pivot. Add a 2-sentence executive read-out at the very top. Show me the plan first.<button class="copy" onclick="cp(this)">Copy</button></div>
-</div>
-
-<div class="activity">
- <div class="head"><span class="num">Task 4.3c</span><span class="file">🌐 Cowork · HTML one-pager</span></div>
- <h4>Same story → one-page HTML view (for sharing in Teams)</h4>
- <div class="prompt">Cowork — take the data behind /Monthly_Review.pptx and produce a self-contained Project_Review.html. Contoso Mining brand colours. Layout: 4 KPI tiles (one per top metric), a waterfall chart in SVG, a small RAG table by site, and a single &quot;Recommendation&quot; ribbon at the bottom. All CSS inline. No JavaScript. Save to OneDrive.<button class="copy" onclick="cp(this)">Copy</button></div>
-</div>
-</div>
-
-<div class="card">
-<h3>4.4 · Alternative angle — the original BCG/McKinsey narrative deck (kept for reference)</h3>
-<p class="lead">Useful when you want a longer, narrative-led strategy deck instead of a quick chart pre-read.</p>
-
-<div class="activity">
- <div class="head"><span class="num">Alt A</span><span class="file">🎨 PowerPoint Copilot · BCG/McKinsey draft</span></div>
- <h4>8-slide consulting-style strategy deck</h4>
- <div class="prompt">Create an 8-slide FY26 Project Portfolio & EPC Bid Strategy deck for Contoso Mining Services. Audience: General Manager · Operations and the Operating Committee. Ground every slide on /05 Contoso_Strategic_Memo.docx and the KPI tables in /02 Contoso_KPI_Dashboard.xlsx. Use the corporate template currently applied to this file.
+ <div class="head"><span class="num">Task 4.1a</span><span class="file">🎨 PowerPoint Copilot</span></div>
+ <h4>Draft an 8-slide GM strategy deck</h4>
+ <p>Open the Copilot pane in PowerPoint. Type <code>/</code> to reference your two source files (<code>05 Contoso_Strategic_Memo.docx</code> and <code>02 Contoso_KPI_Dashboard.xlsx</code>), then paste:</p>
+ <div class="prompt">Create an 8-slide FY26 Project Portfolio & EPC Bid Strategy deck for Contoso Mining Services. Audience: General Manager · Operations and the Operating Committee. Ground every slide on /05 Contoso_Strategic_Memo.docx and the KPI tables in /02 Contoso_KPI_Dashboard.xlsx. Use the corporate template that is currently applied to this file — do not change fonts, colours, or master layouts.
 
 Apply the strict &quot;one message per slide&quot; consulting style (BCG / McKinsey best practice):
-(a) Every slide title is an ACTION TITLE — a full sentence that IS the conclusion.
+(a) Every slide title is an ACTION TITLE — a full sentence that IS the conclusion (e.g. &quot;Same-store sales drag is concentrated in mid-tier department stores&quot;), not a topic (&quot;Same-store sales&quot;).
 (b) The body proves the title with exactly 3 supporting bullets OR one small evidence table — nothing else.
-(c) Every slide has a source caption in 8pt grey at the bottom.
-(d) No more than 30 words of body text per slide.
+(c) Every slide has a source caption in 8pt grey at the bottom referencing the file and tab/page used.
+(d) No more than 30 words of body text per slide. No decorative imagery.
 
-Slides: 1 Title · 2 Executive snapshot · 3 Where we stand today · 4 What is changing · 5 FY26 H2 priorities · 6 Where we invest first · 7 Risks &amp; mitigations · 8 The ask.<button class="copy" onclick="cp(this)">Copy</button></div>
+Slide structure:
+1. Title slide — Contoso Mining Services · FY26 Project Portfolio & EPC Bid Strategy · date
+2. Executive snapshot — single headline + 3-number callout + RAG status
+3. &quot;Where we stand today&quot; — KPI scoreboard (Overburden Removed (Mbcm), Equipment Availability %, Strip Ratio (actual vs plan), Fuel Burn (L per bcm))
+4. &quot;What is changing&quot; — top 3 market forces
+5. &quot;Our three FY26 H2 priorities&quot; — one priority per bullet, with named owner
+6. &quot;Where we invest first&quot; — 90-day moves with cost &amp; expected benefit
+7. &quot;Risks &amp; mitigations&quot; — table: risk, owner, status
+8. &quot;The ask&quot; — 1-page decision summary for the Operating Committee
+
+Tone: direct, evidence-based, no adjectives, no &quot;leverage / synergy / unlock&quot; language. Use [PLACEHOLDER] for any number not in the source files.<button class="copy" onclick="cp(this)">Copy</button></div>
 </div>
 
 <div class="activity">
- <div class="head"><span class="num">Alt B</span><span class="file">🎨 Self-critique pass</span></div>
- <h4>McKinsey-style review of the deck</h4>
- <div class="prompt">Act as a McKinsey engagement manager reviewing this deck. For each slide: score the action title 1–5; if less than 5, rewrite it so it IS the conclusion. Check that the body proves the title. Flag any slide that doesn&#39;t change a decision. Return a 1-page review note with the slide to cut and the missing slide to add. Then apply all edits.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="head"><span class="num">Task 4.1b</span><span class="file">🎨 Self-critique pass</span></div>
+ <h4>Tighten the deck — McKinsey-style review</h4>
+ <div class="prompt">Act as a McKinsey engagement manager reviewing this deck against consulting best practice. For each slide:
+1. Score the action title 1–5. If it&#39;s less than 5, rewrite it so it IS the conclusion (full sentence).
+2. Check that the body proves the title — flag any slide where title and body don&#39;t match.
+3. Check the &quot;so-what&quot;: if the slide doesn&#39;t change a decision, mark it for deletion.
+
+Return a 1-page review note: slide-by-slide table, plus the single slide to cut, plus the single missing slide we should add. Then apply all the edits.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout"><b>The BCG/McKinsey check:</b> read only the action titles top-to-bottom. If they tell the complete story without opening any body, the deck is consulting-grade.</div>
+</div>
+</div>
+
+<div class="card">
+<h3>4.2 · Digest a deck someone just sent the GM</h3>
+<p class="lead">A 60-slide deck lands in your inbox 20 minutes before the meeting. Copilot reads it for you.</p>
+<div class="activity">
+ <div class="head"><span class="num">Task 4.2</span><span class="file">🎨 PowerPoint Copilot</span></div>
+ <h4>Summarise and interrogate an incoming deck</h4>
+ <p>Open any deck you&#39;ve received recently (or use the deck you just drafted). In the Copilot pane:</p>
+ <div class="prompt">Summarise this presentation in 5 bullets. What is the single decision being asked of the audience? What are the 3 numbers I must remember? List the action items with owners and dates. Then list the top 3 questions General Manager · Operations should ask in the room.<button class="copy" onclick="cp(this)">Copy</button></div>
 </div>
 </div>
 </section>
 
 
 <section id="ex5">
-<div class="modulehead"><div class="num">5</div><h2>Exercise 5 · Vendor vs KAK Comparison — Visual Infographic Table<small>Cowork (scores) → Copilot Create (renders) · plus a hyperlink-back-to-source trick</small></h2></div>
-<div class="callout good"><b>The Petrosea-specific play:</b> compare 3–4 tendered vendors against the KAK (Kerangka Acuan Kerja / Terms of Reference) as a single, board-ready, colour-coded infographic table. One A4. Decision-ready.</div>
+<div class="modulehead"><div class="num">5</div><h2>Exercise 5 · Create a Visual Infographic<small>Microsoft 365 Copilot Chat · Create (Designer)</small></h2></div>
+<div class="callout good"><b>The play:</b> use <b>Copilot Create</b> (the Designer feature inside Microsoft 365 Copilot Chat) to generate a polished, brand-aligned one-page infographic in 60 seconds. The prompts below are written in plain language — the way a normal business user would describe what they want.</div>
 
 <div class="card">
-<h3>5.1 · The new main — Vendor vs KAK comparison infographic (two-step flow)</h3>
-<p class="lead">Copilot Create / Designer is a <b>layout</b> tool — it does not deeply read 4 long vendor PDFs and reason cell-by-cell. So we split the play in two: <b>Cowork scores</b> the vendors against the KAK, then <b>Create renders</b> the resulting table as the infographic.</p>
+<p class="lead">Open <b>Microsoft 365 Copilot Chat</b> at <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a> → click <b>Create</b> in the left sidebar (or type <code>/create</code>). Paste the prompt and click <b>Create</b>. You will get 4 design variants — pick one and click <b>Edit</b> to adjust any section.</p>
 
 <div class="activity">
- <div class="head"><span class="num">Task 5.1a</span><span class="file">👥 Cowork · score vendors</span></div>
- <h4>Step 1 — Cowork reads the proposals + KAK and produces the scored table</h4>
- <p>Open <b>Microsoft 365 Copilot Chat → Cowork</b>. Reference each vendor PDF and the KAK with <code>/</code> first (this gives Copilot the file IDs it needs):</p>
- <div class="prompt">Cowork — score the EPC tender proposals against the KAK for Contoso Mining Services.
+ <div class="head"><span class="num">Task 5</span><span class="file">🎨 Copilot Create · image output</span></div>
+ <h4>Generate the one-page infographic</h4>
+ <div class="prompt">Make a premium, industrial one-page infographic poster called &quot;Tender Capability One-Pager — Mining Services &amp; EPC&quot;. Use a serious palette of bronze, gold, and deep navy, with white background. Make it look like something you&#39;d attach to a tender response. Vertical, fits one A4 page, fill the full page from top to bottom — no empty gap at the bottom.
 
-Sources (reference each one with /):
-- /KAK_EPC_Tender_2026.docx (the Kerangka Acuan Kerja)
-- /Vendor_A_Proposal.pdf
-- /Vendor_B_Proposal.pdf
-- /Vendor_C_Proposal.pdf
-- /Vendor_D_Proposal.pdf
+At the top, a big bold title: &quot;CONTOSO MINING SERVICES&quot;
+Underneath: &quot;Integrated mining contractor &amp; EPC partner · Indonesia · Tender capability brief · FY26&quot;
 
-Step 1 — extract the KAK criteria into 5 groups: SCOPE COMPLIANCE, COMMERCIAL, TECHNICAL, ESG / LOCAL CONTENT, RISK. Within each group, list 4 specific criteria. Show the criteria + weights as a table for me to confirm.
+Then a row of 4 big-number boxes in gold:
+- &quot;27 years&quot; — Operating Track Record
+- &quot;180+ Mt&quot; — Material Moved YTD
+- &quot;0.18 TRIR&quot; — 12-Month Safety
+- &quot;ISO 9001 / 14001 / 45001&quot; — Certified
 
-Step 2 (after I confirm) — score every vendor 1–5 against every criterion, with one short evidence quote (≤ 12 words) from the source PDF for every score. Calculate a weighted total per vendor.
+Then a section called &quot;THE THREE CORE CAPABILITIES&quot; with 3 numbered cards side by side. Card 1 — OPEN-PIT MINING with bullets: precision drill &amp; blast; 400+ haul fleet; mine planning &amp; dewatering; progressive reclamation &amp; rehab. Card 2 — EPC &amp; INFRASTRUCTURE with bullets: plant erection &amp; commissioning; jetty, conveyor, power plant; modular fabrication yard; brownfield upgrades. Card 3 — SERVICES &amp; O&amp;M with bullets: equipment maintenance contracts; logistics &amp; supply chain; asset performance monitoring; certified operator training.
 
-Step 3 — output a markdown table I can copy into the next prompt: KAK Criterion · Weight · Vendor A · Vendor B · Vendor C · Vendor D (each cell = score + colour code: 🟢 ≥4, 🟡 =3, 🔴 ≤2). Plus a one-line recommendation, runner-up, and any disqualified vendor with the KAK clause failed.
+Then a small &quot;Project References&quot; table with 4 rows of anonymised wins, with 3 columns: Client (e.g. &quot;Coal Major #1&quot;), Scope (e.g. &quot;Hauling 5 yrs&quot;), Contract Value (e.g. &quot;USD 420M&quot;). Add a tiny location pin icon next to each.
 
-Flag anything unclear with [VERIFY]. Do not invent scores. Stop and confirm the criteria list before scoring.<button class="copy" onclick="cp(this)">Copy</button></div>
+Then a row of 3 simple icons with labels for &quot;What sets us apart&quot;: 12-month LTI-free safety culture, 78% local content, ESG-aligned mine closure plan.
+
+At the bottom, a bronze ribbon footer that says &quot;CONTACT: Tender Office · RESPONSE SLA: 5 working days · CAPACITY: Available Q2 FY26&quot; with today&#39;s date on the right.
+
+Style: clean industrial sans-serif, thin outline icons (excavator, drill, helmet, plant), navy-bronze-gold premium palette, plenty of white space. No stock photos of people. Important: fill the entire A4 page — every section sized to use the full height, no empty bottom gap.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout"><b>Tip if the result has a gap at the bottom:</b> click <b>Create more</b> to re-roll, or click <b>Edit</b> and ask &quot;Please fill the empty space at the bottom of the page — extend the sections or add a small footer with the date and a one-line recommendation.&quot;</div>
+ <div class="callout good"><b>How to share:</b> click <b>Download</b> (PNG or PDF) → drop into Outlook, Teams, or PowerPoint. No HTML, no code, no design tool.</div>
+</div>
+
+<h3 style="margin:24px 0 6px;font-size:16px;font-weight:700">More poster ideas for Contoso Mining</h3>
+<p class="lead">Three alternate angles, same plain-language style. Pick whichever resonates with the room — or run two side-by-side and let the GM choose.</p>
+
+<div class="activity">
+ <div class="head"><span class="num">Alt 5.1</span><span class="file">🎨 Copilot Create · image output</span></div>
+ <h4>Alternate 1 · HSE Snapshot Poster</h4>
+ <div class="prompt">Make a serious, industrial one-page infographic poster called &quot;HSE Snapshot — Our Safety Story in Numbers&quot;. Use deep navy and bronze with white background and red-amber-green for safety status. Vertical A4, fill the whole page.
+
+At the top, a big bold title: &quot;HSE SNAPSHOT&quot;
+Underneath: &quot;Safety is non-negotiable · 12-month performance · For the HSE Committee · FY26&quot;
+
+Then a row of 4 big-number boxes: &quot;0&quot; fatalities; &quot;0.18 TRIR&quot; total recordable injury rate; &quot;3.2 million&quot; safe man-hours since last LTI; &quot;94%&quot; planned safety observations closed on time.
+
+Then a section called &quot;THE THREE PILLARS&quot; with 3 cards side by side. Card 1 — &quot;People&quot;: 12,000 toolbox talks delivered, mandatory refresher for top-3 high-risk activities, mental-health support for night shift. Card 2 — &quot;Process&quot;: ISO 45001 active, life-saving rules audited monthly, &quot;Stop Work Authority&quot; used by every level. Card 3 — &quot;Technology&quot;: collision-avoidance on haul trucks, fatigue monitoring in cabs, drone inspections for high-risk areas.
+
+Then a small table called &quot;Top 5 Incident Types and What We Did&quot; with columns Type, Count vs LY, Root Cause, Action.
+
+Then a row of 3 simple icons with labels for &quot;What we&#39;re working on next&quot;: contractor parity in safety standards, leading-indicator dashboard, expanded mental-health programme.
+
+At the bottom, a bronze ribbon footer saying &quot;COMMITMENT: every Contoso colleague and contractor goes home safe, every day&quot; with today&#39;s date on the right.
+
+Style: clean industrial sans-serif, thin outline icons (hard hat, hand, drone, gear), navy-bronze premium, lots of white space. Fill the entire A4 page.<button class="copy" onclick="cp(this)">Copy</button></div>
 </div>
 
 <div class="activity">
- <div class="head"><span class="num">Task 5.1b</span><span class="file">🎨 Copilot Create · render the infographic</span></div>
- <h4>Step 2 — paste the scored table into Create / Designer to render the visual</h4>
- <p>Open <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a> → <b>Create</b>. Paste the prompt below — and paste the scored table from Task 5.1a where indicated.</p>
- <div class="prompt">Make a one-page infographic poster called &quot;Vendor Evaluation — EPC Tender vs KAK&quot;. Use Contoso Mining brand colours bronze and amber on white, with deep navy headings. Make it look like a serious tender-evaluation summary you would attach to the procurement decision pack. Vertical, A4, fill the entire page — no empty space at the bottom.
+ <div class="head"><span class="num">Alt 5.2</span><span class="file">🎨 Copilot Create · image output</span></div>
+ <h4>Alternate 2 · Project Reference Map</h4>
+ <div class="prompt">Make a serious one-page infographic poster called &quot;Where We Operate — Project Reference Map of Indonesia&quot;. Use deep navy and bronze on white. Vertical A4, fill the whole page.
 
-At the top, a bold title: &quot;EPC TENDER EVALUATION&quot;
-Underneath: &quot;Vendor proposals scored against the KAK (Kerangka Acuan Kerja) · Q3 FY26 · For the Tender Committee&quot;
+At the top, a big bold title: &quot;WHERE WE OPERATE&quot;
+Underneath: &quot;A 27-year track record across Indonesia · Mining, EPC and O&amp;M · For tender response packs · FY26&quot;
 
-A row of 4 big-number boxes:
-- &quot;4&quot; — Vendors evaluated
-- &quot;38&quot; — KAK criteria scored
-- &quot;USD 420M&quot; — Tender envelope
-- &quot;14 days&quot; — Award SLA
+Then a simple stylised outline map of Indonesia in light navy, with 6 numbered location pins marking flagship projects (rough geography is fine — Sumatra coal, Kalimantan coal &amp; gold, Sulawesi nickel, Maluku copper, Java EPC, Bali support hub). Each pin has a small label with the project type only — no client names.
 
-Then the centrepiece — a single big COMPARISON TABLE rendered exactly from the data below. Group rows under mini-header bands (SCOPE COMPLIANCE / COMMERCIAL / TECHNICAL / ESG &amp; LOCAL CONTENT / RISK). Each cell shows BOTH a coloured dot (🟢 / 🟡 / 🔴) AND the 1–5 score. Add a weighted total row at the bottom of each block and a grand total row at the very bottom. Highlight the leading vendor&#39;s column in a soft amber tint.
+Then a section called &quot;OUR PORTFOLIO IN NUMBERS&quot; with 4 big-number boxes: &quot;27 years&quot; operating; &quot;180+ Mt&quot; material moved YTD; &quot;14&quot; active sites; &quot;ISO 9001 / 14001 / 45001&quot; certified.
 
-[PASTE THE SCORED TABLE FROM TASK 5.1a HERE — do not invent scores]
+Then a section called &quot;CAPABILITY MIX&quot; with 3 cards side by side. Card 1 — Mining Services: contract mining, drill &amp; blast, haulage, mine planning. Card 2 — EPC &amp; Infrastructure: plant erection, jetty &amp; conveyor, brownfield upgrades, modular fabrication. Card 3 — Services &amp; O&amp;M: maintenance contracts, logistics, asset monitoring, operator training.
 
-Below the table, three small cards: &quot;Recommended vendor&quot; (one reason), &quot;Runner-up&quot; (the one condition under which they win), &quot;Disqualified&quot; (the KAK clause failed).
+Then a small table called &quot;Selected Project References (anonymised)&quot; with 4 rows and columns Project Type, Location, Years, Scope.
 
-At the bottom, a bronze ribbon footer: &quot;RECOMMENDATION: award to Vendor [X] · CONDITIONS: [2 conditions] · DECISION SLA: 5 working days&quot; with today&#39;s date on the right.
+At the bottom, a bronze ribbon footer saying &quot;CONTACT: Tender Office · RESPONSE SLA: 5 working days&quot; with today&#39;s date on the right.
 
-Style: clean industrial sans-serif, thin outline icons only (excavator, helmet, document, leaf). No clip-art, no photos of people. Fill the entire A4 page edge to edge.<button class="copy" onclick="cp(this)">Copy</button></div>
-</div>
+Style: clean industrial sans-serif, thin outline icons (excavator, plant, ship, drill), navy-bronze. Fill the entire A4 page.<button class="copy" onclick="cp(this)">Copy</button></div>
 </div>
 
-<div class="card">
-<h3>5.2 · The hyperlink-back-to-source trick (works on any Copilot-generated HTML)</h3>
-<p class="lead">For the GM&#39;s question — &quot;can we make each row clickable back to the source vendor PDF in SharePoint?&quot; — yes. Reference each file with <code>/</code> so Copilot has the Graph file IDs to build the SharePoint URLs.</p>
 <div class="activity">
- <div class="head"><span class="num">Tip 5.2</span><span class="file">🔗 Cowork · HTML with SharePoint hyperlinks</span></div>
- <h4>Re-render the comparison as a clickable HTML view</h4>
- <div class="prompt">Cowork — take the vendor evaluation above and produce a self-contained Vendor_Evaluation.html file (same layout) with clickable hyperlinks back to the source files in SharePoint.
+ <div class="head"><span class="num">Alt 5.3</span><span class="file">🎨 Copilot Create · image output</span></div>
+ <h4>Alternate 3 · Decarbonisation Roadmap Poster</h4>
+ <div class="prompt">Make a clean, premium one-page infographic poster called &quot;Decarbonising Mining Services — Our Roadmap to 2040&quot;. Use deep navy and bronze with a small green accent. Vertical A4, fill the whole page.
 
-Reference each source with / so Copilot has the file ID:
-- /KAK_EPC_Tender_2026.docx
-- /Vendor_A_Proposal.pdf
-- /Vendor_B_Proposal.pdf
-- /Vendor_C_Proposal.pdf
-- /Vendor_D_Proposal.pdf
+At the top, a big bold title: &quot;DECARBONISING MINING SERVICES&quot;
+Underneath: &quot;A practical roadmap to 2040 · Scopes 1, 2 and 3 · For the Board Sustainability Committee · FY26&quot;
 
-In the rendered HTML:
-- Each vendor column header is a clickable hyperlink to that vendor&#39;s proposal PDF (use the canonical SharePoint URL for each /-referenced file).
-- Each KAK row label is a clickable hyperlink to the KAK document.
-- Save the HTML to my OneDrive and show me the file URL.<button class="copy" onclick="cp(this)">Copy</button></div>
+Then a horizontal timeline across the page with 4 milestones: 2026 — baseline carbon inventory complete; 2030 — &quot;-20%&quot; Scope 1+2 vs baseline, first electric drill rigs in operation; 2035 — &quot;-50%&quot;, full HVO biofuel transition on supported sites; 2040 — &quot;-80%&quot;, electric haul fleet on the priority projects.
+
+Then a section called &quot;HOW WE GET THERE&quot; with 3 numbered cards side by side. Card 1 — &quot;Decarbonise the fleet&quot;: HVO biofuel pilot at 3 sites, electric ancillaries, solar-diesel hybrid for camps. Card 2 — &quot;Decarbonise EPC delivery&quot;: low-carbon concrete, supplier carbon disclosure, modular pre-fab to cut waste. Card 3 — &quot;Help clients meet their goals&quot;: closure-rehab as standard, water-recycling design, methane capture options for coal-adjacent works.
+
+Then a small table called &quot;Capex envelope&quot; with 4 rows (2026, 2030, 2035, 2040) and 3 columns (Decarb capex range, % of capital plan, Expected client demand).
+
+Then a row of 3 simple icons with labels for &quot;Risks we&#39;re managing&quot;: biofuel availability, electric-rig vendor maturity, client-led pace of change.
+
+At the bottom, a bronze ribbon footer saying &quot;COMMITMENT: practical, evidence-based decarbonisation — reviewed annually&quot; with today&#39;s date on the right.
+
+Style: clean industrial sans-serif, thin outline icons (excavator, drop, leaf, plug), navy-bronze with green accent. Fill the entire A4 page.<button class="copy" onclick="cp(this)">Copy</button></div>
 </div>
+
+
+<div class="activity bonus">
+ <div class="head"><span class="num">Bonus</span><span class="file">🖼️ Copilot Create · refine</span></div>
+ <h4>Refine without starting over</h4>
+ <p>In the Create canvas, click <b>Edit</b> and try one of these plain-English follow-ups:</p>
+ <div class="prompt">Make the title at the top bigger and bolder. Add today&#39;s date in small text in the top right corner.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="prompt">Replace all the icons with simple, thin outline icons in our brand colour. No emojis, no stock photos.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="prompt">There is some empty space at the bottom of the page. Please fill it by extending the sections, or add a footer ribbon in our brand colour with a one-sentence recommendation for the GM and the company name &quot;Contoso Mining Services&quot; on the left.<button class="copy" onclick="cp(this)">Copy</button></div>
 </div>
 
-<div class="card">
-<h3>5.3 · Alternative angle — the original mining-services capability poster</h3>
-<p class="lead">Useful for the &quot;something to hand a prospective client&quot; moment, not for an internal decision.</p>
-<div class="activity">
- <div class="head"><span class="num">Alt A</span><span class="file">🎨 Copilot Create · capability one-pager</span></div>
- <h4>Tender capability brief — mining services &amp; EPC</h4>
- <div class="prompt">Make a premium, industrial one-page infographic poster called &quot;Tender Capability One-Pager — Mining Services &amp; EPC&quot;. Use a serious palette of bronze, gold, and deep navy, on white background. Vertical, A4, fill the entire page.
-
-At the top a bold title &quot;CONTOSO MINING SERVICES&quot;. Underneath: &quot;Integrated mining contractor &amp; EPC partner · Indonesia · Tender capability brief · FY26&quot;.
-
-A row of 4 big-number boxes in gold: 27 years operating track record · 180+ Mt material moved YTD · 0.18 TRIR 12-month safety · ISO 9001 / 14001 / 45001 certified.
-
-Three numbered cards: OPEN-PIT MINING · EPC &amp; INFRASTRUCTURE · SERVICES &amp; O&amp;M, four bullets each.
-
-A small &quot;Project References&quot; table (4 anonymised wins: Client · Scope · Contract Value).
-
-Three icons for &quot;What sets us apart&quot;: LTI-free safety culture · 78% local content · ESG-aligned closure plan.
-
-Bronze ribbon footer: &quot;CONTACT: Tender Office · RESPONSE SLA: 5 working days · CAPACITY: Available Q2 FY26&quot; with today&#39;s date on the right. Clean industrial sans-serif, thin outline icons, no stock photos. Fill the full A4 page.<button class="copy" onclick="cp(this)">Copy</button></div>
-</div>
+<div class="callout warn"><b>Why this matters:</b> Copilot Create runs inside Microsoft 365 with Enterprise Data Protection — your prompt and the resulting design stay in your tenant. The output is a polished, brand-aligned image you can drop straight into Outlook, Teams, or PowerPoint.</div>
 </div>
 </section>
 
@@ -809,61 +766,46 @@ Show me the plan first. I will approve. Then execute.<button class="copy" onclic
 
 
 <section id="ex9">
-<div class="modulehead"><div class="num">9</div><h2>Exercise 9 · Monthly Closing — Personalised Overhead Cascade<small>Corporate Finance · Cowork · one prompt → 8 personalised emails</small></h2></div>
-<div class="callout good"><b>HOUR 1 · DEMO 3a (combined with CV screening):</b> every month, Corporate Finance sends &quot;the same email with different numbers&quot; to every department head. Cowork generates each one — uniquely tuned to that department&#39;s overhead variance — and queues 8 Outlook drafts for the Head of Finance to sign off.</div>
+<div class="modulehead"><div class="num">9</div><h2>Exercise 9 · Personalised Mail Merge (Cowork)<small>Microsoft 365 Copilot · Cowork · Outlook drafts</small></h2></div>
+<div class="callout good"><b>The play:</b> forget Word&#39;s <i>Mailings</i> ribbon. Let <b>Cowork</b> do the merge — drafting each monthly cascade letter — production tonnes, equipment availability, HSE focus, and one specific 30-day ask per site <b>uniquely tuned</b> to that recipient, and queueing them as Outlook drafts for the GM to review and send.</div>
 
 <div class="card">
-<h3>9.1 · One prompt → 8 individually-tuned closing letters → 8 Outlook drafts</h3>
-<p class="lead">Open <b>Microsoft 365 Copilot Chat → Cowork</b>. Reference the new overhead workbook with <code>/</code>:</p>
+<h3>9.1 · One prompt → 14 individually-tuned letters → 14 Outlook drafts</h3>
+<p class="lead">Open <b>Microsoft 365 Copilot Chat → Cowork</b>. Reference the recipient list and brand guidelines with <code>/</code>. Paste:</p>
 <div class="activity">
  <div class="head"><span class="num">Task 9.1</span><span class="file">👥 Cowork · multi-step</span></div>
- <h4>Monthly closing — overhead summary per department, personalised</h4>
- <div class="prompt">Cowork — run the monthly closing overhead cascade for Contoso Mining Services on behalf of the Head of Corporate Finance.
-
-Sources:
-- Overhead actuals vs budget: /08 Contoso_Overhead_By_Department.xlsx (8 rows — one per department head — with Department · Owner · Email · Monthly Budget · Actual · Variance % · Top Cost Driver · YTD Variance · Comment)
-- Brand &amp; tone: /04 Contoso_Brand_Guidelines.docx (use the &quot;Approved Internal Memo&quot; tone)
-
-For each row in the workbook:
-1. Write a personalised 160-word email — same structure for everyone, but the body must reflect that department&#39;s SPECIFIC numbers and Top Cost Driver. Tailor the tone to Variance %:
- - Under-budget (variance ≤ -3%) → appreciative, ask them to share what&#39;s working with neighbouring departments.
- - On-budget (variance between -3% and +3%) → acknowledge, name one specific area to keep an eye on next month.
- - Over-budget (variance ≥ +3%) → direct, supportive, ask for a written 30-day corrective-action plan with named owner and date.
-2. Include a SMALL EMBEDDED TABLE in each email: Department · Budget · Actual · Variance % · YTD Variance · Top Cost Driver — pre-filled from that row only.
-3. Subject line: &quot;[Department] · Monthly Closing — Overhead Summary [Month YYYY]&quot;.
-4. Sign off as Head of Corporate Finance, Contoso Mining Services.
-5. Create an Outlook DRAFT (do not send) to the address in the Email column.
-
-When all 8 drafts are ready, give me a summary table: Department · Owner · Variance % · Tone used · Draft link. Stop and confirm before sending anything.<button class="copy" onclick="cp(this)">Copy</button></div>
-</div>
-</div>
-
-<div class="card">
-<h3>9.2 · Alternative angle — the original site-superintendent project cascade</h3>
-<p class="lead">Useful for the monthly project cascade from the GM Operations to 14 site superintendents (kept from the original flow).</p>
-<div class="activity">
- <div class="head"><span class="num">Alt A</span><span class="file">👥 Cowork · project cascade</span></div>
- <h4>14 site-superintendent letters — production tonnes · equipment availability · HSE</h4>
+ <h4>Personalised cascade — 14 unique letters in one prompt</h4>
  <div class="prompt">Cowork — run a monthly project cascade to 14 site superintendents, project managers and HSE leads for General Manager · Operations at Contoso Mining Services.
 
 Sources:
 - Recipient list: /03 Contoso_Mail_Merge_Recipients.xlsx (14 rows: First Name, Full Name, Location, Role, Email, Performance Band, Key Highlight)
-- Brand &amp; tone: /04 Contoso_Brand_Guidelines.docx
+- Brand &amp; tone: /04 Contoso_Brand_Guidelines.docx (use the &quot;Approved GM Communications Template&quot; exactly)
 
-For each row: write a personal 180-word cascade letter — production tonnes, equipment availability, HSE focus, and one specific 30-day ask per site. Tailor body to Performance Band (Top Quartile / On Track / Watch). Quote the Key Highlight verbatim. Sign off as Pak Surya Wibawa. Create Outlook DRAFT — do not send. Stop and confirm before sending.<button class="copy" onclick="cp(this)">Copy</button></div>
+For each row in the recipient list:
+1. Write a personal 180-word letter using the approved template — a monthly cascade letter — production tonnes, equipment availability, HSE focus, and one specific 30-day ask per site. Tailor the body to the recipient&#39;s Performance Band:
+ - &quot;Top Quartile&quot; → appreciative, ask them to mentor a neighbouring site.
+ - &quot;On Track&quot; → acknowledge progress + push one specific stretch goal relevant to General Manager · Operations.
+ - &quot;Watch&quot; → direct, supportive, name one specific 30-day improvement.
+2. Quote the recipient&#39;s Key Highlight verbatim in the second paragraph.
+3. Sign off as Pak Surya Wibawa, General Manager · Operations, Contoso Mining Services.
+4. Create an Outlook DRAFT (do not send) to the address in the recipient&#39;s Email column. Subject: &quot;[First Name], a quick note on this quarter at [Location]&quot;.
+
+When all 14 drafts are ready, give me a summary table: Recipient · Location · Band · Subject preview · Draft link. Stop and confirm before sending anything.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout"><b>Why Cowork beats classic Mail Merge:</b> classic merge inserts the same body with field substitutions. Cowork writes <i>a different body for each recipient</i> — and stops at &quot;Drafts&quot; so the GM signs off before anything is sent.</div>
 </div>
 </div>
 </section>
 
 
 <section id="ex10">
-<div class="modulehead"><div class="num">10</div><h2>Exercise 10 · CV Screening — Visual Shortlist (Colourful Table / Infographic)<small>Cowork · SharePoint folder · Copilot Create</small></h2></div>
-<div class="callout good"><b>HOUR 1 · DEMO 3b (combined with the finance cascade):</b> HR is capped at 5 CV uploads in most chatbots. Point Cowork at a SharePoint folder — no file cap. Don&#39;t return a wall of markdown — render the shortlist as a colour-coded comparison TABLE or an infographic the hiring manager can scan in 15 seconds.</div>
+<div class="modulehead"><div class="num">10</div><h2>Exercise 10 · CV Screening from a SharePoint Folder<small>Microsoft 365 Copilot · Cowork · SharePoint grounding</small></h2></div>
+<div class="callout good"><b>The scenario:</b> the HR team is capped at attaching only a handful of CVs into most chatbots. Point Cowork at a <b>SharePoint folder</b> and there is no file cap — scale from 12 to 1,200 CVs with the same prompt, fully grounded.</div>
 
 <div class="card">
-<h3>10.1 · Prep — drop the CVs in SharePoint (same as before)</h3>
+<h3>10.1 · Prep — drop the CVs into SharePoint</h3>
 <div class="activity">
  <div class="head"><span class="num">Task 10.1</span><span class="file">📁 SharePoint setup</span></div>
+ <h4>Upload the sample CVs to a SharePoint library</h4>
  <ol>
  <li>Open <code>samples/CVs/</code> (12 CV_*.docx files).</li>
  <li>Upload them to a SharePoint document library — e.g. <i>HR / Recruitment / Contoso Mining Services Mining Project Superintendent – Apr 2026</i>.</li>
@@ -873,49 +815,10 @@ For each row: write a personal 180-word cascade letter — production tonnes, eq
 </div>
 
 <div class="card">
-<h3>10.2 · The new main — Cowork returns a colourful comparison TABLE (in Word) AND an infographic (via Create)</h3>
+<h3>10.2 · Cowork — shortlist + interview pack + offer-letter draft for #1</h3>
 <div class="activity">
- <div class="head"><span class="num">Task 10.2a</span><span class="file">👥 Cowork · visual shortlist in Word</span></div>
- <h4>One prompt → ranked shortlist as a colour-coded comparison table</h4>
- <div class="prompt">Cowork — screen the CVs for the Mining Project Superintendent role at Contoso Mining Services.
-
-Source: SharePoint folder /HR/Recruitment/Contoso Mining Services Mining Project Superintendent (12 CVs).
-
-Do all of the following:
-1. Score every candidate 1–5 against each of these criteria: open-pit operations, heavy-equipment fleet (Komatsu/CAT), blast design, years of relevant experience, leadership scope, HSE record, fit to Contoso Mining culture. Treat 5 = excellent, 1 = weak.
-2. Build a 1-page WORD DOCUMENT &quot;CV Shortlist – Mining Project Superintendent.docx&quot; (NOT markdown, NOT a wall of text). Inside:
- - A header with the role title, today&#39;s date, and number of candidates reviewed.
- - A single COMPARISON TABLE — one row per candidate, columns: Candidate · Current Employer · Years Exp · then one column per criterion above showing both a coloured dot (green/amber/red) AND the 1–5 score · Total · Recommendation (Interview / Second Look / Pass).
- - Use Word native table shading: green ≥4, amber =3, red ≤2.
- - Below the table, three small callout boxes: &quot;Top 3 — interview first&quot;, &quot;Next 3 — second look&quot;, &quot;Pass with reason&quot; (one line each).
- - For the top candidate, draft (DO NOT send) an introductory email inviting them to a 30-min screening call; save as Outlook DRAFT.
-3. Stop before any external send. Flag anything unclear with [VERIFY]. Do not fabricate qualifications.<button class="copy" onclick="cp(this)">Copy</button></div>
-</div>
-
-<div class="activity">
- <div class="head"><span class="num">Task 10.2b</span><span class="file">🎨 Copilot Create · poster version</span></div>
- <h4>Same shortlist → infographic poster (for the panel briefing)</h4>
- <p>Open <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a> → <b>Create</b>. Copy the scored shortlist table from Task 10.2a (the Word doc Cowork just produced) and paste it where indicated below — Create is a layout tool, it will <b>not</b> re-read the SharePoint folder, it needs the data in the prompt.</p>
- <div class="prompt">Make a one-page infographic poster called &quot;Shortlist · Mining Project Superintendent · Contoso Mining&quot;. Use Contoso Mining brand colours bronze and amber on white. Vertical A4, fill the whole page.
-
-A bold title at the top: &quot;TOP 5 CANDIDATES&quot;. Underneath: &quot;Role: Mining Project Superintendent · Reviewed: 12 candidates · For the hiring panel&quot;.
-
-Five horizontal candidate cards stacked top-to-bottom, rendered EXACTLY from the data below. Each card: a circular initials avatar, the candidate name, current employer, years of experience, then 5 small skill-bars (one per criterion) coloured green/amber/red based on the 1–5 score. On the right of each card: a big 1–5 overall score in bronze and a recommendation pill (Interview / Second Look). End each card with the one-line quoted evidence bullet from the CV.
-
-[PASTE THE TOP-5 ROWS OF THE SCORED TABLE FROM TASK 10.2a HERE — name, employer, years, criterion scores, total, recommendation, evidence quote. Do not invent candidates or scores.]
-
-A bottom ribbon: &quot;PANEL DATE: [date] · DECISION SLA: 5 days · NEXT STEP: send interview invites today&quot; with today&#39;s date.
-
-Style: clean modern sans-serif, thin outline icons, no clip-art, no photos of people. Fill the full A4 page edge to edge.<button class="copy" onclick="cp(this)">Copy</button></div>
-</div>
-</div>
-
-<div class="card">
-<h3>10.3 · Alternative angle — original ranked-shortlist (text + interview brief)</h3>
-<p class="lead">The original text-only version is still useful when you want a long-form interview-prep brief for each candidate.</p>
-<div class="activity">
- <div class="head"><span class="num">Alt A</span><span class="file">👥 Cowork · narrative shortlist</span></div>
- <h4>Ranked shortlist + interview prep + offer draft</h4>
+ <div class="head"><span class="num">Task 10.2</span><span class="file">👥 Cowork · folder grounding</span></div>
+ <h4>One prompt → ranked shortlist → personalised interview briefs → drafted candidate email</h4>
  <div class="prompt">Cowork — handle CV screening for the Mining Project Superintendent role at Contoso Mining Services.
 
 Source: SharePoint folder /HR/Recruitment/Contoso Mining Services Mining Project Superintendent (12 CVs).
@@ -924,10 +827,11 @@ Do all of the following:
 1. Review every CV in the folder. Score each candidate 1–5 against: open-pit operations, heavy-equipment fleet (Komatsu/CAT), blast design.
 2. Build a ranked shortlist (top 5) with: name · current company · 3 quoted evidence bullets · risks/gaps to test in interview.
 3. Build a &quot;second look&quot; list (next 3) and a rejected list (one line of reasoning each).
-4. For each top-5 candidate, draft a personalised interview-prep brief — 3 questions, and what kind of answer opens a &quot;yes&quot;.
-5. Draft (DO NOT send) an introductory email to candidate #1 inviting them to a screening call. Save as Outlook draft.
+4. For each top-5 candidate, draft a personalised interview-prep brief for the hiring manager — 3 questions to ask, and what kind of answer opens a &quot;yes&quot;.
+5. Draft (DO NOT send) an introductory email to candidate #1 inviting them to a screening call. Save as an Outlook draft.
 
-Flag anything unclear with [VERIFY]. Do not fabricate qualifications. Stop before any external send.<button class="copy" onclick="cp(this)">Copy</button></div>
+Flag anything unclear with [VERIFY]. Do not fabricate qualifications. Stop and confirm before sending any email.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout good"><b>The win:</b> Cowork grounds on an entire SharePoint folder — the same prompt scales from 12 to 1,200 CVs, with full traceability back to each source CV.</div>
 </div>
 </div>
 </section>
@@ -984,32 +888,6 @@ Produce four artefacts: win-themes (1 page), bid executive summary (2 pages), co
  <div class="callout warn"><b>For the GM in the room:</b> this is the use case worth piloting first. It maps 1:1 to the most expensive analyst hours your team spends every month — and Copilot does it in minutes, grounded on your own files.</div>
 </div>
 </div>
-
-<div class="card" style="border-left:4px solid var(--brand)">
-<h3>🏆 Bonus — &quot;Bring-Your-Own Use Case&quot; Competition (Hour 2 wrap-up)</h3>
-<p class="lead">Every Contoso Mining Services GM team member pitches ONE use case they want Copilot to solve from their real week. The room votes. The winning use case is demo&#39;d live — and the winning GM takes home a small gimmick.</p>
-<div class="activity">
- <div class="head"><span class="num">Bonus</span><span class="file">🎤 Live · 20 minutes</span></div>
- <h4>How to run it (suggested format)</h4>
- <ol>
- <li><b>5 min</b> — each participant writes ONE real use case on a sticky note. Format: &quot;As a [role], I want to [task] so that [outcome].&quot;</li>
- <li><b>5 min</b> — quick read-out, one sentence each (no debate).</li>
- <li><b>2 min</b> — room votes (dot voting or show-of-hands).</li>
- <li><b>5 min</b> — workshop facilitator demos the winning use case LIVE in Copilot, using GCSE (Goal · Context · Source · Expectations) on the spot.</li>
- <li><b>3 min</b> — winning GM gets the gimmick (Copilot-branded notebook, USB-C hub, or your in-house giveaway). Other use cases captured on the wall — workshop owner takes a photo for a follow-up note.</li>
- </ol>
-</div>
-</div>
-
-<div class="card">
-<h3>📝 A note on Microsoft Planner vs Copilot &quot;Plan&quot;</h3>
-<p class="lead">During Excel Power Hour you&#39;ll see Copilot in Excel switch to <b>Plan</b> mode. That is <i>not</i> the same product as Microsoft Planner.</p>
-<ul>
- <li><b>Copilot &quot;Plan&quot; mode in Excel:</b> ✅ designed for GMs — Copilot shows its own work order and asks you to approve before touching the workbook.</li>
- <li><b>Microsoft Planner (the app):</b> a task-tracking app — best for IT teams, ops teams, and project leads, not for a GM&#39;s daily workflow. Skip it in the GM session.</li>
-</ul>
-</div>
-
 </section>
 
 
