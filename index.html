@@ -480,12 +480,12 @@ Generate a 6-slide PowerPoint &quot;Contoso Mining – Monthly Project Review&qu
 Slide 1 — Title.
 Slide 2 — Production scorecard: a clustered column chart of Overburden Removed (Mbcm) by site for the last 3 months, with one-line takeaway.
 Slide 3 — Variance vs plan: a WATERFALL chart showing how each site contributes to the variance vs the FY26 H2 plan (start at plan, +/- per site, end at actual). One-line takeaway.
-Slide 4 — Equipment availability: a 3D CLUSTERED COLUMN chart of Equipment Availability % by site by month. One-line takeaway.
+Slide 4 — Equipment availability: a clustered column chart of Equipment Availability % by site by month (use 2-D, NOT 3-D — keep it consulting-style readable). Add data labels above the bars. One-line takeaway.
 Slide 5 — Safety (TRIR) by site: bar chart with the FY26 target line overlaid. One-line takeaway.
 Slide 6 — &quot;Three things to decide&quot;: 3 bullets, named owners.
 
 Save as Monthly_Review.pptx in OneDrive. Stop before any external action.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout"><b>Why waterfall + 3D column matter:</b> the Director of Operations wants to see where the variance came from (waterfall) and how sites compare over time (3D clustered). Copilot inserts native PowerPoint charts — fully editable, not images.</div>
+ <div class="callout"><b>Why waterfall + clustered column matter:</b> the Director of Operations wants to see where the variance came from (waterfall) and how sites compare over time (clustered column). Copilot inserts native PowerPoint charts — fully editable, not images. We deliberately stay on 2-D charts: 3-D distorts perception and breaks the BCG/McKinsey readability rule.</div>
 </div>
 </div>
 
@@ -496,11 +496,12 @@ Save as Monthly_Review.pptx in OneDrive. Stop before any external action.<button
  <h4>Push the draft into your real corporate template</h4>
  <ol>
  <li>Open <code>Monthly_Review.pptx</code> in PowerPoint Desktop.</li>
- <li><b>Design tab</b> → <b>Browse for themes</b> → pick your real Contoso Mining corporate <code>.potx</code> template.</li>
- <li>Open the <b>Copilot</b> pane and paste:</li>
+ <li><b>Design tab</b> → <b>Browse for themes</b> → pick your real Contoso Mining corporate <code>.potx</code> template. This applies the theme, fonts, colours and master layouts.</li>
+ <li>Open the <b>Copilot</b> pane and paste the prompt below to recolour the chart series and add the corporate footer.</li>
  </ol>
- <div class="prompt">Reapply the corporate template to every slide. Move every chart and title into the template&#39;s master placeholders. Keep the charts native and editable — do not flatten to images. Re-colour every chart series using ONLY the corporate template colour palette. Add a slide footer with &quot;Confidential — Internal Use Only&quot;, the file name, and the page number. Do not change the data or the chart types.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout good"><b>The win:</b> Copilot is now inheriting the brand instead of fighting it. The deck looks like it came from the Contoso Mining brand team — not from a generic Designer template.</div>
+ <div class="prompt">Recolour every chart series using ONLY the corporate theme colour palette that is currently applied. Do not flatten any chart to an image — keep them native and editable. Add a slide footer to every slide with &quot;Confidential — Internal Use Only&quot;, the file name, and the page number. Do not change the data, the chart types, or the slide titles.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout"><b>Reality check:</b> Copilot reliably reapplies the theme + recolours chart series + adds the footer. It is <i>not</i> reliable at moving existing chart objects into specific master placeholders — if the layout shifts on a slide, expect a 1-2 minute manual nudge. That is normal. Do not let it block the demo.</div>
+ <div class="callout good"><b>The win:</b> the deck looks like it came from the Contoso Mining brand team — not from a generic Designer template.</div>
 </div>
 </div>
 
@@ -564,38 +565,57 @@ Slides: 1 Title · 2 Executive snapshot · 3 Where we stand today · 4 What is c
 <div class="callout good"><b>The Petrosea-specific play:</b> instead of a generic poster, use Copilot Create to compare 3–4 tendered vendors against the KAK (Kerangka Acuan Kerja / Terms of Reference) — as a single, board-ready, colour-coded infographic table. One A4. Decision-ready.</div>
 
 <div class="card">
-<h3>5.1 · The new main — Vendor vs KAK comparison infographic</h3>
-<p class="lead">Open <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a> → <b>Create</b> (or <b>Designer</b>). Paste the prompt below. (If you have a real tender shortlist, reference the vendor PDFs and the KAK document with <code>/</code> before pasting — Copilot will use them as grounding.)</p>
+<h3>5.1 · The new main — Vendor vs KAK comparison infographic (two-step flow)</h3>
+<p class="lead">Important: Copilot Create / Designer is a <b>layout</b> tool — it does not deeply read 4 long vendor PDFs and reason cell-by-cell. So we split the play in two: <b>Cowork scores</b> the vendors against the KAK, then <b>Create renders</b> the resulting table as the infographic. Both steps are quick.</p>
 
 <div class="activity">
- <div class="head"><span class="num">Task 5.1</span><span class="file">🎨 Copilot Create · infographic table</span></div>
- <h4>Score vendors against KAK — as a one-page visual</h4>
+ <div class="head"><span class="num">Task 5.1a</span><span class="file">👥 Cowork · score vendors</span></div>
+ <h4>Step 1 — Cowork reads the proposals + KAK and produces the scored table</h4>
+ <p>Open <b>Microsoft 365 Copilot Chat → Cowork</b>. Reference each vendor PDF and the KAK with <code>/</code> first (this gives Copilot the file IDs it needs):</p>
+ <div class="prompt">Cowork — score the EPC tender proposals against the KAK for Contoso Mining Services.
+
+Sources (reference each one with /):
+- /KAK_EPC_Tender_2026.docx (the Kerangka Acuan Kerja)
+- /Vendor_A_Proposal.pdf
+- /Vendor_B_Proposal.pdf
+- /Vendor_C_Proposal.pdf
+- /Vendor_D_Proposal.pdf
+
+Step 1 — extract the KAK criteria into 5 groups: SCOPE COMPLIANCE, COMMERCIAL, TECHNICAL, ESG / LOCAL CONTENT, RISK. Within each group, list 4 specific criteria. Show the criteria + weights as a table for me to confirm.
+
+Step 2 (after I confirm) — score every vendor 1–5 against every criterion, with one short evidence quote (≤ 12 words) from the source PDF for every score. Calculate a weighted total per vendor.
+
+Step 3 — output a markdown table I can copy into the next prompt: KAK Criterion · Weight · Vendor A · Vendor B · Vendor C · Vendor D (each cell = score + colour code: 🟢 ≥4, 🟡 =3, 🔴 ≤2). Plus a one-line recommendation, runner-up, and any disqualified vendor with the KAK clause failed.
+
+Flag anything unclear with [VERIFY]. Do not invent scores. Stop and confirm the criteria list before scoring.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout"><b>If you don&#39;t have real vendor PDFs handy:</b> ask Cowork to fabricate four demo vendors against a simple sample KAK — useful for the live demo but make the disclaimer clear in the room.</div>
+</div>
+
+<div class="activity">
+ <div class="head"><span class="num">Task 5.1b</span><span class="file">🎨 Copilot Create · render the infographic</span></div>
+ <h4>Step 2 — paste the scored table into Create / Designer to render the visual</h4>
+ <p>Open <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a> → <b>Create</b>. Paste the prompt below — and paste the scored table from Task 5.1a where indicated.</p>
  <div class="prompt">Make a one-page infographic poster called &quot;Vendor Evaluation — EPC Tender vs KAK&quot;. Use Contoso Mining brand colours bronze and amber on white, with deep navy headings. Make it look like a serious tender-evaluation summary you would attach to the procurement decision pack. Vertical, A4, fill the entire page — no empty space at the bottom.
 
 At the top, a bold title: &quot;EPC TENDER EVALUATION&quot;
 Underneath: &quot;Vendor proposals scored against the KAK (Kerangka Acuan Kerja) · Q3 FY26 · For the Tender Committee&quot;
 
-Then a row of 4 big-number boxes:
+A row of 4 big-number boxes:
 - &quot;4&quot; — Vendors evaluated
 - &quot;38&quot; — KAK criteria scored
 - &quot;USD 420M&quot; — Tender envelope
 - &quot;14 days&quot; — Award SLA
 
-Then the centrepiece — a single big COMPARISON TABLE. Columns: KAK Criterion · Weight · Vendor A · Vendor B · Vendor C · Vendor D. Rows (group with mini-header bands):
-SCOPE COMPLIANCE — Equipment fleet match · Schedule fit · Volume capacity · HSE plan completeness
-COMMERCIAL — Lump-sum price · Mobilisation cost · Payment terms · Bank guarantee
-TECHNICAL — Mine plan quality · Equipment uptime track record · Drill &amp; blast methodology · Geotech approach
-ESG / LOCAL CONTENT — Local-hire % · Local procurement % · Environmental plan · Community plan
-RISK — Past TRIR · Financial stability · Litigation history · Reference checks
+Then the centrepiece — a single big COMPARISON TABLE rendered exactly from the data below. Group rows under mini-header bands (SCOPE COMPLIANCE / COMMERCIAL / TECHNICAL / ESG &amp; LOCAL CONTENT / RISK). Each cell shows BOTH a coloured dot (🟢 / 🟡 / 🔴) AND the 1–5 score. Add a weighted total row at the bottom of each block and a grand total row at the very bottom. Highlight the leading vendor&#39;s column in a soft amber tint.
 
-Fill cells with a coloured dot (green / amber / red) AND a 1–5 score, NOT long text. Add a weighted total row at the bottom of each block and a grand total row at the very bottom. Highlight the leading vendor&#39;s column in a soft amber tint.
+[PASTE THE SCORED TABLE FROM TASK 5.1a HERE — do not invent scores]
 
-Below the table, three small cards: &quot;Recommended vendor&quot; (with the one reason), &quot;Runner-up&quot; (with the one condition under which they win), &quot;Disqualified&quot; (with the KAK clause failed).
+Below the table, three small cards: &quot;Recommended vendor&quot; (one reason), &quot;Runner-up&quot; (the one condition under which they win), &quot;Disqualified&quot; (the KAK clause failed).
 
 At the bottom, a bronze ribbon footer: &quot;RECOMMENDATION: award to Vendor [X] · CONDITIONS: [2 conditions] · DECISION SLA: 5 working days&quot; with today&#39;s date on the right.
 
-Style: clean industrial sans-serif, thin outline icons only (excavator, helmet, document, leaf). No clip-art, no photos of people. Important: fill the entire A4 page edge to edge.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout good"><b>Why this beats a written tender-evaluation memo:</b> the Tender Committee sees the full evaluation in one glance — and the colour-coded cells force the team to be explicit about every KAK criterion. No hiding behind paragraphs.</div>
+Style: clean industrial sans-serif, thin outline icons only (excavator, helmet, document, leaf). No clip-art, no photos of people. Fill the entire A4 page edge to edge.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout good"><b>Why the two-step flow is better than &quot;one prompt does it all&quot;:</b> Cowork is the deep reader (PDFs + KAK + scoring); Create is the visual designer. Asking Designer to do both ends in invented scores. Two prompts, two minutes, board-ready output.</div>
 </div>
 </div>
 
@@ -605,8 +625,20 @@ Style: clean industrial sans-serif, thin outline icons only (excavator, helmet, 
 <div class="activity">
  <div class="head"><span class="num">Tip 5.2</span><span class="file">🔗 Cowork · HTML with SharePoint hyperlinks</span></div>
  <h4>Re-render the comparison as a clickable HTML view</h4>
- <div class="prompt">Cowork — take the vendor evaluation above and produce a self-contained Vendor_Evaluation.html file (same layout) where each vendor column header is a clickable hyperlink to that vendor&#39;s proposal PDF in /Sites/Procurement/EPC_Tender_2026/. Each KAK row is a clickable hyperlink to the matching section of the KAK document in the same library. Use the OneDrive/SharePoint canonical URL for each file (Copilot can resolve these from the path). Save the HTML to OneDrive and show me the file URL.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout"><b>How it works under the hood:</b> Copilot uses the Microsoft Graph file IDs to build canonical <code>https://contoso.sharepoint.com/...</code> URLs. Anyone with permission to the source can click straight through; anyone without permission gets an &quot;Access Denied&quot; — i.e. governance is preserved.</div>
+ <div class="prompt">Cowork — take the vendor evaluation above and produce a self-contained Vendor_Evaluation.html file (same layout) with clickable hyperlinks back to the source files in SharePoint.
+
+Reference each source with / so Copilot has the file ID:
+- /KAK_EPC_Tender_2026.docx
+- /Vendor_A_Proposal.pdf
+- /Vendor_B_Proposal.pdf
+- /Vendor_C_Proposal.pdf
+- /Vendor_D_Proposal.pdf
+
+In the rendered HTML:
+- Each vendor column header is a clickable hyperlink to that vendor&#39;s proposal PDF (use the canonical SharePoint URL for each /-referenced file).
+- Each KAK row label is a clickable hyperlink to the KAK document.
+- Save the HTML to my OneDrive and show me the file URL.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout"><b>How it works under the hood:</b> when you reference files with <code>/</code>, Copilot has each file&#39;s Microsoft Graph ID and can build canonical <code>https://contoso.sharepoint.com/...</code> URLs. Anyone with permission to the source can click straight through; anyone without permission gets &quot;Access Denied&quot; — i.e. governance is preserved. <b>Without the / references, Copilot has to guess the URL — and that is unreliable.</b></div>
 </div>
 </div>
 
@@ -873,12 +905,14 @@ Do all of the following:
 <div class="activity">
  <div class="head"><span class="num">Task 10.2b</span><span class="file">🎨 Copilot Create · poster version</span></div>
  <h4>Same shortlist → infographic poster (for the panel briefing)</h4>
- <p>Open <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a> → <b>Create</b>. Paste:</p>
+ <p>Open <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a> → <b>Create</b>. Copy the scored shortlist table from Task 10.2a (the Word doc Cowork just produced) and paste it where indicated below — Create is a layout tool, it will <b>not</b> re-read the SharePoint folder, it needs the data in the prompt.</p>
  <div class="prompt">Make a one-page infographic poster called &quot;Shortlist · Mining Project Superintendent · Contoso Mining&quot;. Use Contoso Mining brand colours bronze and amber on white. Vertical A4, fill the whole page.
 
 A bold title at the top: &quot;TOP 5 CANDIDATES&quot;. Underneath: &quot;Role: Mining Project Superintendent · Reviewed: 12 candidates · For the hiring panel&quot;.
 
-Five horizontal candidate cards stacked top-to-bottom. Each card: a circular initials avatar, the candidate name (use [Candidate 1] / [Candidate 2] etc. as placeholders), current employer, years of experience, then 5 small skill-bars (one per criterion) coloured green/amber/red. On the right of each card: a big 1–5 overall score in bronze and a recommendation pill (Interview / Second Look). End each card with a one-line quoted evidence bullet from the CV.
+Five horizontal candidate cards stacked top-to-bottom, rendered EXACTLY from the data below. Each card: a circular initials avatar, the candidate name, current employer, years of experience, then 5 small skill-bars (one per criterion) coloured green/amber/red based on the 1–5 score. On the right of each card: a big 1–5 overall score in bronze and a recommendation pill (Interview / Second Look). End each card with the one-line quoted evidence bullet from the CV.
+
+[PASTE THE TOP-5 ROWS OF THE SCORED TABLE FROM TASK 10.2a HERE — name, employer, years, criterion scores, total, recommendation, evidence quote. Do not invent candidates or scores.]
 
 A bottom ribbon: &quot;PANEL DATE: [date] · DECISION SLA: 5 days · NEXT STEP: send interview invites today&quot; with today&#39;s date.
 
