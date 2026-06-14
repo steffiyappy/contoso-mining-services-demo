@@ -598,6 +598,7 @@ On slide 3 use a waterfall chart (start = plan tonnes, deltas = top 4 variance c
 On slide 2 use a clustered column chart (revenue, EBITDA, availability — last 4 quarters).
 Keep slide bodies to ≤ 4 bullets. No filler narrative.
 Save as <b>QClose_Draft.pptx</b> in OneDrive.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout warn"><b>If the waterfall lands as a column chart:</b> right-click the chart → <b>Change Chart Type</b> → <b>Waterfall</b>, then in the data table mark the start and end rows as "Set as Total". Native PowerPoint waterfall is supported but Copilot's first attempt sometimes defaults to a column chart.</div>
 </div>
 
 <div class="activity">
@@ -736,33 +737,44 @@ Style: clean industrial sans-serif, thin outline icons (excavator, drop, leaf, p
 </div>
 
 <div class="card" style="border:2px solid var(--accent);background:#fff7ed">
-<h3>🅱️ Option B · Vendor-vs-KAK comparison <small>(infographic table — the slide a GM actually uses to decide)</small></h3>
-<div class="callout"><b>Why Option B:</b> a brand poster is nice. A vendor-vs-KAK (Kerangka Acuan Kerja) comparison table is what gets walked into the steerco. Same Copilot Create tool — different prompt, different artefact.</div>
+<h3>🅱️ Option B · Vendor-vs-KAK comparison <small>(Cowork → interactive HTML — real hyperlinks to SharePoint bid packs)</small></h3>
+<div class="callout"><b>Why Cowork (and not Create) for this one:</b> the CIO asked whether the comparison table can hyperlink to the SharePoint bid documents. <b>Copilot Create produces visual designs, not real clickable hyperlinks.</b> For a decision-ready table with working <code>&lt;a href&gt;</code> links, Cowork → HTML is the right tool. (Use Option A or the Designer brand poster when you just want a printable visual.)</div>
 <div class="activity">
- <div class="head"><span class="num">5·B</span><span class="file">🎨 Microsoft 365 Copilot · Create</span></div>
- <h4>Four bidders, one KAK, one page, decision-ready</h4>
- <p>Open <b>Microsoft 365 Copilot Chat</b> → <b>Create</b> → <i>Design an infographic</i>. Paste:</p>
- <div class="prompt">Make a one-page comparison-table infographic titled "EPC Tender — Vendor vs KAK Match" for Contoso Mining Services.
+ <div class="head"><span class="num">5·B</span><span class="file">🚀 Microsoft 365 Copilot · Cowork</span></div>
+ <h4>Four bidders, one KAK, one screen, decision-ready</h4>
+ <p>Open <b>Microsoft 365 Copilot Chat</b> → switch to <b>Cowork</b>. Paste:</p>
+ <div class="prompt">Build ONE self-contained interactive HTML page (all CSS and JS inline, no external libs) called <b>Vendor_KAK_Comparison.html</b> for Contoso Mining Services's EPC tender evaluation.
 
-Layout: a single big table that fills the page.
-Rows = 4 candidate vendors:
+A single big comparison table — rows = 4 bidders:
  1. Borneo EPC Specialists
  2. Trans-Asia Engineers
  3. NusaWorks Industrial
  4. PrimeBuild Indonesia
 
 Columns:
- • Reference projects (last 5 yrs, count + flagship)
+ • Vendor (rendered as a clickable &lt;a href&gt; — see URL list below)
+ • Reference projects (last 5 yrs · count + flagship)
  • Engineering bench (head-count + key disciplines)
- • Proposed timeline vs KAK (months ± vs the 18-month KAK)
+ • Timeline vs KAK (months ± vs the 18-month KAK)
  • Cost band vs KAK budget (within / above / below)
  • HSE record (LTI rate, last 3 yrs)
- • <b>KAK match score</b> — coloured cell: green (≥85%), amber (70–84%), red (&lt;70%)
+ • <b>KAK match score</b> — coloured cell: green ≥ 85%, amber 70–84%, red &lt; 70%
 
-Below the table: 3 short callouts — recommended bidder, watch-out, decision needed by date.
-Use brand colours #b45309 and #f59e0b, deep navy headers, white background. Vertical A4. Fill the whole page — no empty bottom band.
-Where each row references a source bid document, render the vendor name as a hyperlink — I will paste the SharePoint share-link URLs underneath.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout"><b>Tip — hyperlinks to SharePoint files:</b> after Create renders, edit the output and paste the SharePoint/OneDrive share-link URL for each bid pack. Create preserves real <code>&lt;a href=...&gt;</code> when you supply the URL — it cannot resolve a Graph file ID on its own.</div>
+Add at the top:
+ • A &lt;select&gt; "Filter by score band" — All / Green / Amber / Red.
+ • Sortable column headers (click to sort ascending / descending).
+
+Below the table: 3 small callouts — recommended bidder, watch-out, decision-by date.
+
+Vendor URLs (use these as the &lt;a href&gt; for each vendor name — leave a placeholder if I haven't pasted one):
+ • Borneo EPC Specialists: [PASTE THE SHAREPOINT SHARE LINK HERE]
+ • Trans-Asia Engineers: [PASTE THE SHAREPOINT SHARE LINK HERE]
+ • NusaWorks Industrial: [PASTE THE SHAREPOINT SHARE LINK HERE]
+ • PrimeBuild Indonesia: [PASTE THE SHAREPOINT SHARE LINK HERE]
+
+Visual: brand colours #b45309 and #f59e0b, deep navy header row, generous whitespace, fits 1280px wide.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout"><b>How to get the SharePoint share link:</b> in SharePoint or OneDrive, right-click the bid document → <b>Share</b> → <b>Copy link</b>. Paste each one into the prompt where it says <code>[PASTE THE SHAREPOINT SHARE LINK HERE]</code>. Cowork will preserve them as real <code>&lt;a href&gt;</code> in the HTML — clicking opens the bid pack from SharePoint.</div>
+ <div class="callout warn"><b>Want a printable poster instead?</b> Use Option A (Copilot Create brand poster). Designer is great for visual one-pagers but won't give you working hyperlinks.</div>
 </div>
 </div>
 </section>
@@ -968,6 +980,7 @@ For each row, draft an email TO the department-head email in column "Owner Email
  • Sign-off as "Pak Surya Wibawa, General Manager · Operations"
 
 Tone: warm, direct, in the GM's voice. Each email ≤ 150 words. Land all 8 as Outlook drafts in my Drafts folder — do NOT send.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout warn"><b>If your tenant doesn't expose Outlook drafts to Cowork:</b> Cowork will produce all 8 email bodies inline in chat with the matching recipient/subject. Click "Open in Outlook" on each to land it as a draft, or copy/paste into a new mail.</div>
 </div>
 
 <div class="activity">
