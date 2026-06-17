@@ -522,6 +522,7 @@ Visual style: clean cards, generous whitespace, brand colours #b45309 and #f59e0
 Total prose ≤ 250 words. Favour bullets, badges, small data points over paragraphs.
 Save as <b>Market_Intelligence_View.html</b> in my OneDrive.<button class="copy" onclick="cp(this)">Copy</button></div>
  <div class="callout warn"><b>Reality check:</b> Cowork can write a self-contained HTML with vanilla JS for the filter and toggles. It cannot pull live web data — ground on the Researcher report you already saved, or on <code>/01 Contoso_Market_Brief.xlsx</code>.</div>
+ <div class="callout"><b>How this gets shared:</b> the HTML is for the GM's <b>own screen</b> (open in browser before the meeting). If you need to email it to the leadership team, either (a) open in browser → <b>Ctrl+P → Save as PDF</b> → attach the PDF, or (b) screenshot the page and paste into the email body. Sending the raw .html file works but lands as a file-icon attachment, not an inline visual.</div>
 </div>
 </div>
 </section>
@@ -618,6 +619,7 @@ Save as <b>QClose_Draft.pptx</b> in OneDrive.<button class="copy" onclick="cp(th
  • a single-tab <b>Excel</b> pivot — KPI by site, with conditional-formatting traffic lights for variance vs plan. Save as QClose_Pivot.xlsx.
  • a one-page interactive <b>HTML</b> — clean dashboard layout, KPI cards, a dropdown to filter by site, the waterfall chart redrawn in inline SVG. Save as QClose_OnePager.html.
 All three must use the SAME numbers as the deck.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout"><b>What to share where:</b> attach the <b>.pptx</b> for the board (preserves charts + hyperlinks), attach the <b>.docx</b> for read-ahead reading, send the <b>.xlsx</b> to the finance team for drill-down. The <b>HTML one-pager</b> is for the GM's own screen — emailing it lands as a file-icon attachment, not an inline visual.</div>
 </div>
 </div>
 </section>
@@ -737,44 +739,41 @@ Style: clean industrial sans-serif, thin outline icons (excavator, drop, leaf, p
 </div>
 
 <div class="card" style="border:2px solid var(--accent);background:#fff7ed">
-<h3>🅱️ Option B · Vendor-vs-KAK comparison <small>(Cowork → interactive HTML — real hyperlinks to SharePoint bid packs)</small></h3>
-<div class="callout"><b>Why Cowork (and not Create) for this one:</b> the CIO asked whether the comparison table can hyperlink to the SharePoint bid documents. <b>Copilot Create produces visual designs, not real clickable hyperlinks.</b> For a decision-ready table with working <code>&lt;a href&gt;</code> links, Cowork → HTML is the right tool. (Use Option A or the Designer brand poster when you just want a printable visual.)</div>
+<h3>🅱️ Option B · Vendor-vs-KAK comparison <small>(PowerPoint slide with hyperlinks — visual AND emailable AND clickable)</small></h3>
+<div class="callout"><b>Why PowerPoint (and not HTML or Designer) for this one:</b> the table needs to be (1) <i>visual</i> for the steerco screen, (2) <i>emailable</i> as a slide you can paste into Outlook or attach as .pptx/PDF, and (3) <i>clickable</i> to the SharePoint bid packs. PowerPoint is the only artefact that does all three. (HTML attachments arrive as a file icon; Designer renders pretty visuals but doesn't preserve clickable hyperlinks reliably.)</div>
 <div class="activity">
- <div class="head"><span class="num">5·B</span><span class="file">🚀 Microsoft 365 Copilot · Cowork</span></div>
- <h4>Four bidders, one KAK, one screen, decision-ready</h4>
- <p>Open <b>Microsoft 365 Copilot Chat</b> → switch to <b>Cowork</b>. Paste:</p>
- <div class="prompt">Build ONE self-contained interactive HTML page (all CSS and JS inline, no external libs) called <b>Vendor_KAK_Comparison.html</b> for Contoso Mining Services's EPC tender evaluation.
+ <div class="head"><span class="num">5·B</span><span class="file">🚀 Cowork → 🎯 PowerPoint Copilot</span></div>
+ <h4>Four bidders, one KAK, one slide, decision-ready</h4>
+ <p>Open <b>PowerPoint</b> (a blank deck, or the Petrosea corporate template). Click <b>Copilot</b> in the ribbon. Paste:</p>
+ <div class="prompt">Add ONE new slide titled "EPC Tender — Vendor vs KAK Match" for Contoso Mining Services.
 
-A single big comparison table — rows = 4 bidders:
- 1. Borneo EPC Specialists
- 2. Trans-Asia Engineers
- 3. NusaWorks Industrial
- 4. PrimeBuild Indonesia
-
-Columns:
- • Vendor (rendered as a clickable &lt;a href&gt; — see URL list below)
+Body of the slide = a single table with 4 vendor rows and these columns:
+ • Vendor (the vendor name in this cell must be a clickable hyperlink — see URL list below)
  • Reference projects (last 5 yrs · count + flagship)
  • Engineering bench (head-count + key disciplines)
  • Timeline vs KAK (months ± vs the 18-month KAK)
  • Cost band vs KAK budget (within / above / below)
  • HSE record (LTI rate, last 3 yrs)
- • <b>KAK match score</b> — coloured cell: green ≥ 85%, amber 70–84%, red &lt; 70%
+ • <b>KAK match score</b> — cell-shaded green ≥ 85%, amber 70–84%, red &lt; 70%
 
-Add at the top:
- • A &lt;select&gt; "Filter by score band" — All / Green / Amber / Red.
- • Sortable column headers (click to sort ascending / descending).
+Vendors:
+ 1. Borneo EPC Specialists
+ 2. Trans-Asia Engineers
+ 3. NusaWorks Industrial
+ 4. PrimeBuild Indonesia
 
-Below the table: 3 small callouts — recommended bidder, watch-out, decision-by date.
+Below the table, add three short callout boxes: recommended bidder · watch-out · decision-by date.
 
-Vendor URLs (use these as the &lt;a href&gt; for each vendor name — leave a placeholder if I haven't pasted one):
+Use the slide's existing colour theme (brand colours #b45309 and #f59e0b, deep navy header row). Make the table fill the slide body — no empty space.
+
+Vendor SharePoint URLs (use these as the hyperlink target for each vendor name — leave the cell unlinked if I haven't pasted one):
  • Borneo EPC Specialists: [PASTE THE SHAREPOINT SHARE LINK HERE]
  • Trans-Asia Engineers: [PASTE THE SHAREPOINT SHARE LINK HERE]
  • NusaWorks Industrial: [PASTE THE SHAREPOINT SHARE LINK HERE]
- • PrimeBuild Indonesia: [PASTE THE SHAREPOINT SHARE LINK HERE]
-
-Visual: brand colours #b45309 and #f59e0b, deep navy header row, generous whitespace, fits 1280px wide.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout"><b>How to get the SharePoint share link:</b> in SharePoint or OneDrive, right-click the bid document → <b>Share</b> → <b>Copy link</b>. Paste each one into the prompt where it says <code>[PASTE THE SHAREPOINT SHARE LINK HERE]</code>. Cowork will preserve them as real <code>&lt;a href&gt;</code> in the HTML — clicking opens the bid pack from SharePoint.</div>
- <div class="callout warn"><b>Want a printable poster instead?</b> Use Option A (Copilot Create brand poster). Designer is great for visual one-pagers but won't give you working hyperlinks.</div>
+ • PrimeBuild Indonesia: [PASTE THE SHAREPOINT SHARE LINK HERE]<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout"><b>How to get the SharePoint share link:</b> in SharePoint or OneDrive, right-click the bid document → <b>Share</b> → <b>Copy link</b> → paste each one into the prompt where it says <code>[PASTE THE SHAREPOINT SHARE LINK HERE]</code>.</div>
+ <div class="callout warn"><b>If Copilot doesn't apply the hyperlinks first time:</b> right-click each vendor name in the table → <b>Link</b> → paste the SharePoint URL. PowerPoint preserves hyperlinks when you (a) email the .pptx as an attachment, (b) export to PDF, or (c) copy the slide and paste into the Outlook compose pane (Outlook keeps the table layout + the links).</div>
+ <div class="callout"><b>Want a screen-only interactive version too?</b> Run the same prompt in Cowork and ask for "an interactive HTML page with sortable columns and a score-band filter" — useful for the GM's own screen, but remember: HTML emails as an attachment, not as an inline visual.</div>
 </div>
 </div>
 </section>
@@ -1000,6 +999,7 @@ Requirements (all CSS and JS inline, no external libs):
 
 Save in OneDrive root.<button class="copy" onclick="cp(this)">Copy</button></div>
  <div class="callout warn"><b>Note:</b> the cockpit is a static HTML — Cowork bakes the data into the file at generation time. To refresh next month, re-run this same prompt against the new month's row in the workbook.</div>
+ <div class="callout"><b>How this gets shared:</b> the cockpit is meant for the GM's own screen — open in browser at month-end. To share with the leadership team, either (a) screen-share it on the call, (b) <b>Ctrl+P → Save as PDF</b> and attach, or (c) screenshot the active view and paste into Outlook. Don't email the raw .html — recipients only see a file icon.</div>
 </div>
 </div>
 </section>
