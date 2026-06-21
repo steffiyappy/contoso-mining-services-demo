@@ -604,10 +604,18 @@ Save as <b>QClose_Draft.pptx</b> in OneDrive.<button class="copy" onclick="cp(th
 
 <div class="activity">
  <div class="head"><span class="num">4·B-2</span><span class="file">🎨 PowerPoint Copilot</span></div>
- <h4>Step 2 — Apply the corporate Petrosea template</h4>
- <p>Open <b>QClose_Draft.pptx</b>, then File → New from Template → pick the official Petrosea corporate template (.potx). Copilot pane:</p>
- <div class="prompt">Re-apply the slide master, fonts, brand colours and footer of the currently-open Petrosea corporate template to every slide of this deck. Keep the chart data, but recolour the chart series to the brand palette. Keep all text content unchanged.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout warn"><b>Reality check:</b> recolouring text/fills/charts to the template palette is reliable. Auto-moving native charts into the template's exact placeholder boxes is hit-or-miss — expect to nudge two or three charts by hand.</div>
+ <h4>Step 2 — Apply the corporate Petrosea template (PTP-CC-TPL-G-0006)</h4>
+ <p>Make sure <code>PTP-CC-TPL-G-0006 Wide (16-9) - Presentation Template.pptx</code> is in the same OneDrive folder as <b>QClose_Draft.pptx</b>. Open <b>QClose_Draft.pptx</b>, then go to <b>Design → Themes → Browse for Themes…</b> and pick the PTP-CC-TPL-G-0006 file (PowerPoint can read the theme directly from a .pptx — you do not need a .potx). Then open the <b>Copilot</b> pane and paste:</p>
+ <div class="prompt">Re-apply the slide master, fonts, brand colours, header and footer from the Petrosea corporate template "PTP-CC-TPL-G-0006 Wide (16-9) - Presentation Template.pptx" to every slide of this deck.
+
+Specifically:
+• Use the title slide layout from PTP-CC-TPL-G-0006 for slide 1.
+• Use the standard content layout (with the Petrosea logo and footer bar) for every other slide.
+• Match the Petrosea brand colour palette for all text, fills and chart series — including the waterfall chart.
+• Keep the Petrosea logo in the same position the template defines.
+• Do NOT change any text content, slide order, chart data, or speaker notes.
+• Keep the deck at 16:9 widescreen.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout warn"><b>Reality check:</b> "Browse for Themes" reliably pulls the master, fonts, colours and logo placement from the template .pptx. Copilot will then recolour text and chart series to match. Auto-moving native charts into the template's exact placeholder boxes is hit-or-miss — expect to nudge two or three charts by hand. If a slide still looks off, right-click the slide → <b>Layout</b> → pick the matching PTP-CC-TPL-G-0006 layout.</div>
 </div>
 
 <div class="activity">
