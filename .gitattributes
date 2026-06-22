@@ -1,0 +1,1 @@
+samples/daily_production_20260622.xlsx filter=lfs diff=lfs merge=lfs -text
