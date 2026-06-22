@@ -391,32 +391,23 @@ td a{color:var(--ink);font-weight:600}td a:hover{color:var(--accent2)}
  <div class="head"><span class="num">Task 1.1</span><span class="file">🔍 Researcher · Auto (Critique)</span></div>
  <h4>Generate today&#39;s GM daily briefing</h4>
 <h4>🅰️ Option A · Wordy briefing (structured text)</h4>
-<div class="prompt">Create a daily briefing from emails, messages, documents, and meetings to help me prepare for the current workday. Use your understanding of the projects I work on, workstreams I care about, and key people I work with to understand what is relevant and important.
+<div class="prompt">Help me prepare for today. Look at my emails, Teams messages, calendar and recent files, and put together a short daily briefing for me as General Manager.
 
-Sections:
+Open with a quick personal greeting — just a couple of sentences telling me what kind of day I&#39;m walking into.
 
-A short intro paragraph that provides an overview of my day, i.e. what a personal assistant would tell me to greet me in the morning.
+Then walk me through:
+• What changed since I left the office yesterday — only the things that genuinely affect my work or my team.
+• What I need to get done today — tasks or questions that are on my plate. Skip anything that&#39;s already been closed out.
+• Unread email threads from the past week that probably need a reply from me — focus on ones where I&#39;m directly involved (To, CC, @mentioned) or where there&#39;s a request, deadline, leadership or customer angle. Skip the automated noise. Show me only the urgent or important ones in a tidy little table, and draft a short reply for each. If there&#39;s nothing to reply to, just say so.
+• What&#39;s on my calendar today — only upcoming meetings, in a table: meeting (time, title, organiser), what it&#39;s about, and how I should prepare. Tell me if you&#39;re inferring the prep or if I don&#39;t really need to prep.
 
-Key updates since yesterday – Include informational updates from the last workday that are likely to impact my work and collaborations.
+Stick to what you can actually see in my emails, files and calendar — no guessing. If a section is empty, just say it&#39;s empty.
 
-Suggested tasks for today – Tasks or questions assigned to me that I should handle today. Cross-check that suggested tasks haven't been completed already.
+Title it &quot;Daily briefing – &lt;day&gt;, &lt;date&gt;&quot; with a small line underneath showing the time you generated it, and put a relevant emoji at the start of each section.
 
-List unread email threads from the past week that likely need my reply—prioritize those where I&#39;m on To/CC, @mentioned, or involve requests, deadlines, leadership, or customers. Exclude automated messages. Show only urgent or important items in a concise table, and draft replies where needed. If none require action, say: &#39;I didn&#39;t find any unread threads that require a reply.&#39;
+At the very top of the briefing, before everything else, please also include an illustration that captures what today actually looks like for me. You decide the style — it could be a sketched scene, a small collage, an iso-style vignette, a pictogram set, an abstract composition, whatever feels right. The only things I care about: it should reflect the real substance of today&#39;s briefing (not a generic office or sunrise picture), it should be a wide banner shape, it should use our Contoso Mining Services brand feel — warm orange and dark slate as the lead colours with neutral supporting tones — and please keep any words inside the image to a minimum. Add a small grey caption underneath: &quot;Today at a glance · Contoso Mining Services&quot;.
 
-Meeting prep for today – Upcoming meetings only, shown in a table with: Meeting (time, title, organizer), Topic Overview, and Suggested Preparations. Note if inferred or not needed.
-
-Rules:
-Start with a header: Daily briefing – Day, Date. Follow with a sub-header stating the timestamp of generation. Start each section with a meaningful emoji. Use only explicitly stated facts; no speculation, interpretations or predictions. If a section has no data, state that.
-
-Visual:
-At the very top of the briefing — above the header — include a single illustration that visualises today&#39;s briefing. You decide the visual form (free-flow): it could be a sketched scene, a layered collage, an iso-style vignette, a stylised pictogram set, an abstract composition, or anything else that best captures what today actually looks like for me. The only rules:
-• It must depict the substance of THIS briefing (the actual themes, priorities, people-load, decisions) — not a generic office or sunrise scene.
-• Wide banner shape (roughly three times wider than tall).
-• Use the Contoso Mining Services brand palette — warm orange and dark slate as the lead colours, with neutral supporting tones.
-• Keep text inside the image to an absolute minimum (a few short labels at most).
-• Caption it in small grey text below: &quot;Today at a glance · Contoso Mining Services&quot;.
-
-Do not ask me any clarifying questions. Proceed directly and produce the full briefing in one pass. Keep it tight — no filler.<button class="copy" onclick="cp(this)">Copy</button></div>
+Please don&#39;t ask me any clarifying questions — just go ahead and produce the whole briefing in one go. Keep it tight.<button class="copy" onclick="cp(this)">Copy</button></div>
  <div class="callout warn"><b>Reality check on the illustration:</b> Researcher in Microsoft 365 Copilot is primarily a text + tables + citations surface. Inline image generation is best-effort here — on some tenants it renders a real illustration, on others it falls back to a stylised emoji banner or a placeholder line. If the image doesn&#39;t appear, follow up with: <i>&quot;Generate the hero illustration described above as a separate image I can download.&quot;</i> — that hands it off to the image-gen path.</div>
 <div class="callout"><b>What success looks like:</b> within 90 seconds you have a one-screen brief: overview paragraph, key updates since yesterday, today&#39;s tasks, unread threads that need a reply (with drafts), and a meeting-prep table — all grounded on real signals from your tenant, with citations.</div>
 
