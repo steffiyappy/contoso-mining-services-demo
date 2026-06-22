@@ -228,6 +228,24 @@ td a{color:var(--ink);font-weight:600}td a:hover{color:var(--accent2)}
 .modal .close:hover{background:var(--badge-bg);color:var(--ink)}
 .modal .prompt{margin-top:10px}
 @media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
 </style></head>
 <body>
 <div id="lock">
@@ -559,62 +577,50 @@ Do not ask me any clarifying questions — produce it in one pass.<button class=
 </div>
 
 <div class="card" style="border:2px solid var(--accent);background:#fff7ed">
-<h3>4.2 · Option B — Your own real profile, web-grounded</h3>
-<p class="lead">Two steps. First, let Researcher pull together what the public web actually knows about you. Then hand those facts to Copilot Create to render the visual.</p>
+<h3>4.2 · Option B — Your own real profile, in one Copilot Chat prompt</h3>
+<p class="lead">A single prompt in Microsoft 365 Copilot Chat. Copilot will web-search your public profile and then render the visual CV in one pass — no copy-paste between surfaces.</p>
 
 <div class="activity">
- <div class="head"><span class="num">Task 4.2 · step 1</span><span class="file">🔍 Researcher · web-grounded</span></div>
- <h4>Step 1 — Gather your public profile</h4>
- <p>Open <a href="https://m365.cloud.microsoft" target="_blank">Microsoft 365 Copilot</a> → click <b>Researcher</b>. Replace the bracketed placeholders with your own details, then paste:</p>
- <div class="prompt">Research the public profile of [YOUR FULL NAME], [YOUR CURRENT ROLE] at [YOUR COMPANY]. Use only publicly available sources — LinkedIn, the company website, news articles, conference bios, industry interviews, regulatory filings.
+ <div class="head"><span class="num">Task 4.2</span><span class="file">💬 Copilot Chat · web + image</span></div>
+ <h4>One-shot visual CV from your real public profile</h4>
+ <p>Open <a href="https://m365.cloud.microsoft" target="_blank">Microsoft 365 Copilot Chat</a>. Make sure <b>Web</b> is on. Replace the bracketed placeholders with your own details, then paste:</p>
+ <div class="prompt">Build me a polished, one-page visual executive CV for [YOUR FULL NAME], [YOUR CURRENT ROLE] at [YOUR COMPANY].
 
-Produce a structured profile pack I can hand to a designer:
+Do this in two passes inside this single conversation:
 
-1. Headline — name, current role, company, country.
-2. Short "About" paragraph (3 lines, written in the third person, factual, no hype).
-3. Career highlights — 3 impact bullets with real numbers / outcomes where the public record states them. Mark any inferred numbers with [INFERRED].
-4. Experience timeline — 4 most recent roles: role · company · years · one-line achievement (from public sources).
-5. Education & certifications — verified entries only.
-6. Core strengths — 4 short chips, inferred from the public record, each backed by a 1-line source quote.
-7. A short quote you have actually said in public (with the source link).
-8. Public contact / social handles — LinkedIn URL, conference profile pages, etc.
+PASS 1 — Research my public profile on the web. Use only publicly available sources (LinkedIn, the company website, news articles, conference bios, industry interviews, regulatory filings). Pull together:
+• A short "About" paragraph (3 lines, third person, factual).
+• 3 career-highlight bullets with real numbers / outcomes where the public record states them. Mark any inferred numbers with [INFERRED].
+• A 4-role experience timeline: role · company · years · one-line achievement.
+• Education & certifications (verified entries only).
+• 4 core-strength chips, each backed by a 1-line source quote.
+• One quote I have actually said in public (with the source link).
+• Public contact / social handles.
+Cite every fact with a source URL. If a section has no public evidence, write "No public source found" — do not fabricate.
 
-Cite every fact with a source URL. If a section has no public evidence, write "No public source found" rather than guessing. Do not fabricate.
+PASS 2 — Take everything from pass 1 and render it as a single one-page visual executive CV (a generated image, A4 portrait). Keep every fact verbatim from pass 1; do not embellish.
 
-Do not ask me any clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout warn"><b>Reality check:</b> Researcher only sees what is publicly indexed. If your LinkedIn is private or your name is common, you may need to give it more grounding — e.g. add your company website "about us" page URL to the prompt.</div>
-</div>
-
-<div class="activity">
- <div class="head"><span class="num">Task 4.2 · step 2</span><span class="file">🖼️ Copilot Create (Designer)</span></div>
- <h4>Step 2 — Render the visual CV from the gathered facts</h4>
- <p>Switch to <b>Create</b> (Designer). Paste the prompt below — and after the line that says "PASTE THE PROFILE PACK HERE", paste the entire output from step 1.</p>
- <div class="prompt">Create a polished, one-page visual executive CV using the profile pack I am pasting below. Keep every fact verbatim from the pack — do not embellish, do not invent numbers, do not add achievements that are not in the pack.
-
-Style: modern editorial infographic, portrait A4 orientation. Use my company's brand feel — if I gave you a brand colour in the pack, use it; otherwise default to a confident corporate palette (deep navy + warm accent). Clean sans-serif type, generous white space, soft shadows, rounded corners. Board-ready.
+Style: modern editorial infographic, clean sans-serif, generous white space, soft shadows, rounded corners. If I gave you a brand colour in my company description, use it; otherwise default to a confident corporate palette (deep navy + warm accent).
 
 Composition, top to bottom:
-• Header band: full name in large type, current role underneath, "company · country" as a one-line strap.
+• Header band: full name in large type, current role underneath, "company · country" strap.
 • Left column (about 35% width):
-  – At the top, a generated portrait photo that broadly matches a professional headshot description for the person in the profile pack (age band, region, business attire). Frame in a circular mask. This is a synthetic stand-in until I replace it with my real photo.
-  – The "About" paragraph from the pack.
-  – A "Contact" block with the LinkedIn handle and any other public handles from the pack.
+  – At the top, a generated portrait photo that broadly matches a professional headshot description for the person (age band, region, business attire). Frame in a circular mask. This is a synthetic stand-in until I replace it with my real photo.
+  – The "About" paragraph from pass 1.
+  – A "Contact" block with the public handles from pass 1.
 • Right column (about 65% width):
-  – "CAREER HIGHLIGHTS" — the 3 impact bullets from the pack. Keep any [INFERRED] tags visible as a small muted label.
-  – "EXPERIENCE" — the 4-role vertical timeline from the pack, with a small thin-outline icon next to each role.
-  – "EDUCATION & CERTIFICATIONS" — the verified entries from the pack, as small badge chips.
-  – "CORE STRENGTHS" — the 4 chips from the pack, each with a small icon.
-• Footer band in dark/brand colour: the public quote from the pack in italic, with the company name on the right.
+  – "CAREER HIGHLIGHTS" with the 3 bullets from pass 1 (keep any [INFERRED] tags visible as small muted labels).
+  – "EXPERIENCE" — the 4-role vertical timeline from pass 1, with small thin-outline icons.
+  – "EDUCATION & CERTIFICATIONS" — the verified entries from pass 1, as badge chips.
+  – "CORE STRENGTHS" — the 4 chips from pass 1, each with a small icon.
+• Footer band: the public quote from pass 1 in italic, with the company name on the right.
 
 Generate the portrait and the small section icons — do not leave blank placeholders. Keep all text crisp and short. Produce it as one polished one-page image I can download.
 
-————————
-PASTE THE PROFILE PACK HERE:
-[paste the full output from Researcher step 1]
-
-Do not ask me any clarifying questions — produce it in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
- <div class="callout"><b>What success looks like:</b> a download-ready visual CV grounded on your real public profile, not invented details. The portrait is still synthetic — click <b>Edit</b> in Create to swap for your real photo before sharing externally.</div>
- <div class="callout warn"><b>Privacy note:</b> Researcher pulls from the public web. If you would rather it didn't, run step 1 with only the URLs you trust (your LinkedIn, your company bio page) by adding them to the prompt explicitly — it will stay grounded on those.</div>
+Do not ask me any clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout"><b>What success looks like:</b> within a single Copilot Chat turn you get the research summary <i>and</i> the rendered visual CV — no switching between Researcher and Create.</div>
+ <div class="callout warn"><b>Reality check:</b> the web search inside Copilot Chat is lighter than a dedicated Researcher pass — fewer sources, less cross-checking. Good enough for a quick demo or an internal one-pager. For a board-facing or externally published CV, run the same logic in Researcher first for a more rigorous, cited pass before rendering in Create.</div>
+ <div class="callout warn"><b>Privacy note:</b> if you'd rather Copilot didn't roam the public web, restrict it to specific trusted URLs (your LinkedIn, your company bio page) by listing them in the prompt — it will stay grounded on those.</div>
 </div>
 </div>
 </section>
