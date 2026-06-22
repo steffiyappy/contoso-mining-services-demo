@@ -156,6 +156,24 @@ td a{color:var(--ink);font-weight:600}td a:hover{color:var(--accent2)}
 .modal .close:hover{background:var(--badge-bg);color:var(--ink)}
 .modal .prompt{margin-top:10px}
 @media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
 </style></head>
 <body>
 <div id="lock">
@@ -506,37 +524,37 @@ Do not ask me any clarifying questions — produce it in one pass.<button class=
 </button>
 <button class="bcard" onclick="openModal('mail-merge')">
  <span class="ico">✉️</span>
- <span class="tag">Finance · HR</span>
- <h4>Personalised mail merge</h4>
- <p>One Cowork prompt produces 14 personalised letters from the GM to her team — each tuned to that person's site, role and performance band — all landing as Outlook drafts.</p>
+ <span class="tag">Cascade · Outlook drafts</span>
+ <h4>Personalised Mail Merge</h4>
+ <p>Forget Word's Mailings ribbon. Cowork writes a different body for each recipient — production, equipment, HSE, one 30-day ask — tuned to their performance band, and queues them as Outlook drafts.</p>
  <span class="cta">OPEN →</span>
 </button>
 <button class="bcard" onclick="openModal('cv-screening')">
  <span class="ico">👥</span>
- <span class="tag">HR · Talent</span>
- <h4>CV screening at scale</h4>
- <p>Point Cowork at a SharePoint folder of CVs and get a ranked shortlist with strengths, gaps and interview questions per candidate — well beyond the 5-file Copilot Chat limit.</p>
+ <span class="tag">HR · SharePoint grounding</span>
+ <h4>CV Screening from SharePoint</h4>
+ <p>Point Cowork at a SharePoint folder of CVs — same prompt scales from 12 to 1,200. Ranked shortlist, second-look list, interview-prep briefs, and a draft email to candidate #1.</p>
  <span class="cta">OPEN →</span>
 </button>
 <button class="bcard" onclick="openModal('finance-cascade')">
  <span class="ico">💰</span>
- <span class="tag">Corporate finance</span>
- <h4>Monthly overhead cascade</h4>
- <p>On monthly close, send each department head their own personalised overhead summary — same template, their numbers, their top cost driver, their YTD variance — all as Outlook drafts.</p>
+ <span class="tag">Corporate finance · monthly close</span>
+ <h4>Monthly Overhead Cascade</h4>
+ <p>At month-end, Finance writes the same email eight times — different department, different numbers, same shape. Cowork does it once, then opens an interactive cockpit so the GM sees all eight at a glance.</p>
  <span class="cta">OPEN →</span>
 </button>
 <button class="bcard" onclick="openModal('minutes')">
  <span class="ico">📝</span>
- <span class="tag">Meetings</span>
- <h4>Meeting minutes to template</h4>
- <p>From a Teams transcript (or a Word transcript file), produce a fully populated meeting-minutes Word document, an Excel actions tracker and an Analyst view on whether the actions are realistic.</p>
+ <span class="tag">Meeting minutes · Word</span>
+ <h4>Meeting minutes template + auto-fill</h4>
+ <p>Create a reusable Word meeting-minutes template once, then auto-fill it from a Teams recap or a transcript — grounded on facts, not the minute-taker's memory.</p>
  <span class="cta">OPEN →</span>
 </button>
 <button class="bcard" onclick="openModal('poster')">
  <span class="ico">🎨</span>
- <span class="tag">Internal campaign</span>
- <h4>Campaign poster</h4>
- <p>Generate a campaign poster — World Environment Day, HSE awareness, Piala Dunia health drive, end-of-year safety — in the corporate look, ready for WhatsApp and noticeboard.</p>
+ <span class="tag">Internal poster · Copilot Create</span>
+ <h4>Campaign poster ideas</h4>
+ <p>Three alternate angles for a one-page corporate poster — HSE Snapshot, Where We Operate, Decarbonisation Roadmap. Pick whichever resonates with the room.</p>
  <span class="cta">OPEN →</span>
 </button>
 </div>
@@ -621,97 +639,180 @@ Do not ask me any clarifying questions — proceed.<button class="copy" onclick=
 <div class="modal-overlay" id="modal-mail-merge" onclick="if(event.target===this)closeModal('mail-merge')">
  <div class="modal">
   <button class="close" onclick="closeModal('mail-merge')" aria-label="Close">×</button>
-  <h3>✉️ Personalised mail merge</h3>
+  <h3>✉️ Personalised Mail Merge</h3>
   <p class="sub">Cowork · Outlook drafts</p>
-  <div class="prompt">Cowork — produce personalised letters from the General Manager · Operations to every recipient in /03 Contoso_Mail_Merge_Recipients.xlsx.
+  <div class="prompt">Cowork — run a monthly project cascade to 14 site superintendents, project managers and HSE leads for General Manager · Operations at Contoso Mining Services.
 
-For each row in the file, draft an email that:
-• Greets the recipient by name and references their site and role.
-• Acknowledges their performance band (Top, Solid, Watch).
-• Calls out their key highlight verbatim from the file.
-• Sets one priority for the next quarter that fits their performance band — stretch for Top, deepening for Solid, support plan for Watch.
-• Signs off in the GM's voice, following the tone in /04 Contoso_Brand_Guidelines.docx.
+Sources:
+- Recipient list: /03 Contoso_Mail_Merge_Recipients.xlsx (14 rows: First Name, Full Name, Location, Role, Email, Performance Band, Key Highlight)
+- Brand &amp; tone: /04 Contoso_Brand_Guidelines.docx (use the "Approved GM Communications Template" exactly)
 
-Save every draft to Outlook Drafts addressed to the email in the file. Do not send. Show me the count of drafts created when done.
+For each row in the recipient list:
+1. Write a personal 180-word letter using the approved template — a monthly cascade letter — production tonnes, equipment availability, HSE focus, and one specific 30-day ask per site. Tailor the body to the recipient's Performance Band:
+ - "Top Quartile" → appreciative, ask them to mentor a neighbouring site.
+ - "On Track" → acknowledge progress + push one specific stretch goal relevant to General Manager · Operations.
+ - "Watch" → direct, supportive, name one specific 30-day improvement.
+2. Quote the recipient's Key Highlight verbatim in the second paragraph.
+3. Sign off as Pak Surya Wibawa, General Manager · Operations, Contoso Mining Services.
+4. Create an Outlook DRAFT (do not send) to the address in the recipient's Email column. Subject: "[First Name], a quick note on this quarter at [Location]".
 
-Do not ask me any clarifying questions — proceed.<button class="copy" onclick="cp(this)">Copy</button></div>
+When all 14 drafts are ready, give me a summary table: Recipient · Location · Band · Subject preview · Draft link. Stop and confirm before sending anything.<button class="copy" onclick="cp(this)">Copy</button></div>
  </div>
 </div>
 <div class="modal-overlay" id="modal-cv-screening" onclick="if(event.target===this)closeModal('cv-screening')">
  <div class="modal">
   <button class="close" onclick="closeModal('cv-screening')" aria-label="Close">×</button>
-  <h3>👥 CV screening at scale</h3>
-  <p class="sub">Cowork · SharePoint grounding</p>
-  <div class="prompt">Cowork — screen every CV in the SharePoint folder /samples/CVs/ for the role "Mining Project Superintendent · Indonesia operations".
+  <h3>👥 CV Screening from SharePoint</h3>
+  <p class="sub">Cowork · SharePoint folder</p>
+  <h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Primary · Cowork · ranked shortlist + interview pack</h4><div class="prompt">Cowork — handle CV screening for the Mining Project Superintendent role at Contoso Mining Services.
 
-Required criteria:
-• 10+ years in open-pit mining or EPC, with at least 3 years as a site lead.
-• Indonesian regulatory exposure (KP / IUP, K3LH, Permen ESDM).
-• HSE-led leadership style — evidence of zero-LTI track record or strong safety programmes.
-• Bahasa Indonesia + working English.
+Source: SharePoint folder /HR/Recruitment/Contoso Mining Services Mining Project Superintendent (12 CVs).
 
-Produce a single ranked shortlist as a table: rank · candidate name · current role · 3 strengths · 2 gaps · fit score /10 · 3 interview questions tailored to that candidate's gaps.
+Do all of the following:
+1. Review every CV in the folder. Score each candidate 1–5 against: open-pit operations, heavy-equipment fleet (Komatsu/CAT), blast design.
+2. Build a ranked shortlist (top 5) with: name · current company · 3 quoted evidence bullets · risks/gaps to test in interview.
+3. Build a "second look" list (next 3) and a rejected list (one line of reasoning each).
+4. For each top-5 candidate, draft a personalised interview-prep brief for the hiring manager — 3 questions to ask, and what kind of answer opens a "yes".
+5. Draft (DO NOT send) an introductory email to candidate #1 inviting them to a screening call. Save as an Outlook draft.
 
-Below the table, draft a short note to HR explaining the top 3 picks and why.
+Flag anything unclear with [VERIFY]. Do not fabricate qualifications. Stop and confirm before sending any email.<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Optional · Colourful candidate poster (Copilot Create)</h4><div class="prompt">Make a one-page colourful infographic poster titled "Mining Project Superintendent — Candidate Shortlist" for the General Manager · Operations of Contoso Mining Services.
 
-Do not invent details that are not in the CVs. If a CV is missing a required criterion, say so explicitly. Do not ask me any clarifying questions — proceed.<button class="copy" onclick="cp(this)">Copy</button></div>
+Render 12 candidate cards in a 4×3 grid:
+ • Card title: candidate name + role-fit score (0–100)
+ • Coloured score band: green ≥ 80, amber 60–79, red &lt; 60
+ • One-line strength
+ • One-line gap
+ • Years of relevant experience as a small badge
+
+The TOP 3 candidates by score must have a thicker gold border and a "TOP 3" ribbon.
+
+Below the grid: a 3-line summary — "Recommend interview", "Hold for second round", "Decline". Place each candidate name under the right line.
+
+Paste the scored table here:
+[PASTE THE SCORED TABLE FROM YOUR COWORK STEP — Create cannot re-read the SharePoint folder.]
+
+Use our Contoso Mining Services brand feel — warm orange and dark slate as the lead colours with neutral supporting tones — on a white background, vertical A4, and fill the whole page (no empty bottom band).<button class="copy" onclick="cp(this)">Copy</button></div>
+
  </div>
 </div>
 <div class="modal-overlay" id="modal-finance-cascade" onclick="if(event.target===this)closeModal('finance-cascade')">
  <div class="modal">
   <button class="close" onclick="closeModal('finance-cascade')" aria-label="Close">×</button>
-  <h3>💰 Monthly overhead cascade</h3>
-  <p class="sub">Cowork · Outlook drafts</p>
-  <div class="prompt">Cowork — it's monthly close. For every department in /08 Contoso_Overhead_By_Department.xlsx, draft a personalised email from the GM to the department head.
+  <h3>💰 Monthly Overhead Cascade</h3>
+  <p class="sub">Cowork · Outlook drafts + HTML cockpit</p>
+  <h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Step 1 · Eight personalised drafts, one prompt</h4><div class="prompt">From /08 Contoso_Overhead_By_Department.xlsx, generate 8 personalised monthly-closing emails — one per department row.
 
-Each email must:
-• Subject: "Monthly close — [Department] overhead summary"
-• Open with the headline: budget vs actual for the month, variance %, RAG.
-• Three bullets: the top cost driver this month, the YTD variance trend, and one thing I'd like the department head to look at before next month's close.
-• Close with: "Reply by [next Friday] with your two-line view."
-• Sign off as the GM, in the tone of /04 Contoso_Brand_Guidelines.docx.
+For each row, draft an email TO the department-head email in column "Owner Email", subject "Monthly Closing — &lt;Department&gt; · Overhead Recap", body:
+ • One-line greeting using their first name
+ • Their actual vs budget overhead this month (from the row)
+ • Variance % — flag green (≤ -3%), amber (-3% to +3%) or red (≥ +3%)
+ • Their top cost driver this month (from the row)
+ • Year-to-date variance (from the row)
+ • One specific 30-day ask tied to that variance band
+ • Sign-off as "Pak Surya Wibawa, General Manager · Operations"
 
-Save every email as an Outlook draft addressed to the dept-head email in the file. Do not send. Confirm the count of drafts created.
+Tone: warm, direct, in the GM's voice. Each email ≤ 150 words. Land all 8 as Outlook drafts in my Drafts folder — do NOT send.<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Step 2 · Interactive HTML cockpit (same Cowork session)</h4><div class="prompt">From the same workbook, also produce ONE self-contained interactive HTML page called Monthly_Overhead_Cockpit.html that the GM opens at month-end.
 
-Do not ask me any clarifying questions — proceed.<button class="copy" onclick="cp(this)">Copy</button></div>
+Requirements (all CSS and JS inline, no external libs):
+ • Header: title, period (current month), and a warm-orange brand stripe along the top.
+ • A &lt;select&gt; dropdown with the 8 departments. Picking one updates the cards below.
+ • Four big KPI cards: Budget · Actual · Variance % (traffic-light coloured) · YTD Variance.
+ • A horizontal bar chart (inline SVG) showing all 8 departments' variance % side-by-side, with the picked department highlighted.
+ • A small "top 3 cost drivers" panel for the picked department.
+ • A &lt;button&gt; "Open the email draft for this department" that shows the corresponding draft body in a modal (use the drafts you just generated).
+ • Clean cards, generous whitespace, fits 1280px wide, no scrolling needed at 100% zoom.
+
+Save in OneDrive root.<button class="copy" onclick="cp(this)">Copy</button></div>
+
  </div>
 </div>
 <div class="modal-overlay" id="modal-minutes" onclick="if(event.target===this)closeModal('minutes')">
  <div class="modal">
   <button class="close" onclick="closeModal('minutes')" aria-label="Close">×</button>
-  <h3>📝 Meeting minutes to template</h3>
-  <p class="sub">Word · Excel · Analyst</p>
-  <div class="prompt">I have a meeting transcript (Teams recap or /06 Contoso_Merger_Discussion_Transcript.docx). In Copilot Chat, do all three of the following:
+  <h3>📝 Meeting minutes template + auto-fill</h3>
+  <p class="sub">Word Copilot</p>
+  <h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Step 1 · Create the reusable template</h4><div class="prompt">Create a professional, reusable meeting-minutes template for Contoso Mining Services. The template should be clean, executive-ready, and easy to fill in after any internal meeting.
 
-1. Produce a Word meeting minutes document using our standard template structure: Meeting title · Date/time · Attendees · Apologies · Agenda items · Discussion summary per agenda item · Decisions · Action items (owner, due date) · Next meeting. Save as MeetingMinutes_[date].docx to OneDrive.
+Include the following sections, each with placeholder text in square brackets so users know what to fill in:
 
-2. Produce an Excel actions tracker — one row per action, columns: ID · Action · Owner · Due date · Status · Source meeting · Notes. Save as Actions_[date].xlsx to OneDrive.
+1. Header block: Meeting title, Date &amp; time, Location / Teams link, Meeting owner, Minute-taker
+2. Attendees (table: Name, Role, Present / Apologies)
+3. Agenda items discussed (numbered list)
+4. Key decisions taken (table: Decision, Decision owner, Effective date)
+5. Action items (table: Action, Owner, Due date, Status)
+6. Open questions / parked items (bullet list)
+7. Risks &amp; escalations raised (bullet list)
+8. Next meeting (date, focus topics)
+9. Distribution list
 
-3. Switch to the Analyst agent. Open the actions tracker and give me a one-screen view: which actions are realistic given the discussion, which have unclear owners, which have unrealistic timing, and which need a follow-up meeting. Be blunt.
+Use the Contoso Mining Services brand tone: direct, professional, no jargon. Add a 1-line footer: "Confidential — internal use only." Format it so it looks like a proper corporate template, not a chat reply.<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Step 2 · Auto-fill from the merger transcript</h4><div class="prompt">Using the meeting-minutes template above, fill it in completely using the content of /06 Contoso_Merger_Discussion_Transcript.docx (or the Teams recap I just generated for the Potential Merger meeting).
 
-Do not ask me any clarifying questions — proceed.<button class="copy" onclick="cp(this)">Copy</button></div>
+Rules:
+- Use only facts explicitly stated in the source — no speculation, no invented attendees, no invented decisions.
+- For every action item, name the owner and the due date exactly as agreed in the meeting; if not stated, write [VERIFY] in that field.
+- Keep the executive tone — short, factual, neutral.
+- At the very top, add a 3-line executive summary above the template (so a busy reader can skim).
+- Flag any sensitive merger-related items as "CONFIDENTIAL — restricted distribution" in red at the section header.<button class="copy" onclick="cp(this)">Copy</button></div>
+
  </div>
 </div>
 <div class="modal-overlay" id="modal-poster" onclick="if(event.target===this)closeModal('poster')">
  <div class="modal">
   <button class="close" onclick="closeModal('poster')" aria-label="Close">×</button>
-  <h3>🎨 Campaign poster</h3>
+  <h3>🎨 Campaign poster ideas</h3>
   <p class="sub">Copilot Create (Designer)</p>
-  <div class="prompt">Create a single-page internal campaign poster for Contoso Mining Services.
+  <h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Alternate 1 · HSE Snapshot Poster</h4><div class="prompt">Make a serious, industrial one-page infographic poster called "HSE Snapshot — Our Safety Story in Numbers". Use deep navy and bronze with white background and red-amber-green for safety status. Vertical A4, fill the whole page.
 
-Campaign: World Environment Day — 5 June. Theme: "Reclaim · Restore · Reforest". Audience: all site staff in Indonesia.
+At the top, a big bold title: "HSE SNAPSHOT"
+Underneath: "Safety is non-negotiable · 12-month performance · For the HSE Committee · FY26"
 
-Style: bold, friendly, brand-aligned (warm orange, dark slate, leaf green as a supporting accent). Portrait A4. Easy to read on a WhatsApp preview and on a printed A4 noticeboard.
+Then a row of 4 big-number boxes: "0" fatalities; "0.18 TRIR" total recordable injury rate; "3.2 million" safe man-hours since last LTI; "94%" planned safety observations closed on time.
 
-Composition:
-• Top: large hero illustration — an Indonesian open-pit site transitioning into reclaimed forest on the right, haul trucks giving way to saplings. Iso-style, not stock-photo.
-• Middle: campaign title "Reclaim · Restore · Reforest" in big type, with a one-line tagline.
-• Three icon-led tips: "Plant one tree per shift", "Sort your waste at site", "Carpool to the mess hall". Each one short.
-• Bottom: a brand-coloured strip with the date, the company name, and a small QR-style placeholder labelled "Sign up for the site reforestation drive".
+Then a section called "THE THREE PILLARS" with 3 cards side by side. Card 1 — "People": 12,000 toolbox talks delivered, mandatory refresher for top-3 high-risk activities, mental-health support for night shift. Card 2 — "Process": ISO 45001 active, life-saving rules audited monthly, "Stop Work Authority" used by every level. Card 3 — "Technology": collision-avoidance on haul trucks, fatigue monitoring in cabs, drone inspections for high-risk areas.
 
-Keep text crisp and short. Use both Bahasa Indonesia and English where natural. Produce it as one polished poster image I can download and share on WhatsApp.
+Then a small table called "Top 5 Incident Types and What We Did" with columns Type, Count vs LY, Root Cause, Action.
 
-Do not ask me any clarifying questions — proceed.<button class="copy" onclick="cp(this)">Copy</button></div>
+Then a row of 3 simple icons with labels for "What we're working on next": contractor parity in safety standards, leading-indicator dashboard, expanded mental-health programme.
+
+At the bottom, a bronze ribbon footer saying "COMMITMENT: every Contoso colleague and contractor goes home safe, every day" with today's date on the right.
+
+Style: clean industrial sans-serif, thin outline icons (hard hat, hand, drone, gear), navy-bronze premium, lots of white space. Fill the entire A4 page.<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Alternate 2 · Project Reference Map</h4><div class="prompt">Make a serious one-page infographic poster called "Where We Operate — Project Reference Map of Indonesia". Use deep navy and bronze on white. Vertical A4, fill the whole page.
+
+At the top, a big bold title: "WHERE WE OPERATE"
+Underneath: "A 27-year track record across Indonesia · Mining, EPC and O&amp;M · For tender response packs · FY26"
+
+Then a simple stylised outline map of Indonesia in light navy, with 6 numbered location pins marking flagship projects (rough geography is fine — Sumatra coal, Kalimantan coal &amp; gold, Sulawesi nickel, Maluku copper, Java EPC, Bali support hub). Each pin has a small label with the project type only — no client names.
+
+Then a section called "OUR PORTFOLIO IN NUMBERS" with 4 big-number boxes: "27 years" operating; "180+ Mt" material moved YTD; "14" active sites; "ISO 9001 / 14001 / 45001" certified.
+
+Then a section called "CAPABILITY MIX" with 3 cards side by side. Card 1 — Mining Services: contract mining, drill &amp; blast, haulage, mine planning. Card 2 — EPC &amp; Infrastructure: plant erection, jetty &amp; conveyor, brownfield upgrades, modular fabrication. Card 3 — Services &amp; O&amp;M: maintenance contracts, logistics, asset monitoring, operator training.
+
+Then a small table called "Selected Project References (anonymised)" with 4 rows and columns Project Type, Location, Years, Scope.
+
+At the bottom, a bronze ribbon footer saying "CONTACT: Tender Office · RESPONSE SLA: 5 working days" with today's date on the right.
+
+Style: clean industrial sans-serif, thin outline icons (excavator, plant, ship, drill), navy-bronze. Fill the entire A4 page.<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Alternate 3 · Decarbonisation Roadmap</h4><div class="prompt">Make a clean, premium one-page infographic poster called "Decarbonising Mining Services — Our Roadmap to 2040". Use deep navy and bronze with a small green accent. Vertical A4, fill the whole page.
+
+At the top, a big bold title: "DECARBONISING MINING SERVICES"
+Underneath: "A practical roadmap to 2040 · Scopes 1, 2 and 3 · For the Board Sustainability Committee · FY26"
+
+Then a horizontal timeline across the page with 4 milestones: 2026 — baseline carbon inventory complete; 2030 — "-20%" Scope 1+2 vs baseline, first electric drill rigs in operation; 2035 — "-50%", full HVO biofuel transition on supported sites; 2040 — "-80%", electric haul fleet on the priority projects.
+
+Then a section called "HOW WE GET THERE" with 3 numbered cards side by side. Card 1 — "Decarbonise the fleet": HVO biofuel pilot at 3 sites, electric ancillaries, solar-diesel hybrid for camps. Card 2 — "Decarbonise EPC delivery": low-carbon concrete, supplier carbon disclosure, modular pre-fab to cut waste. Card 3 — "Help clients meet their goals": closure-rehab as standard, water-recycling design, methane capture options for coal-adjacent works.
+
+Then a small table called "Capex envelope" with 4 rows (2026, 2030, 2035, 2040) and 3 columns (Decarb capex range, % of capital plan, Expected client demand).
+
+Then a row of 3 simple icons with labels for "Risks we're managing": biofuel availability, electric-rig vendor maturity, client-led pace of change.
+
+At the bottom, a bronze ribbon footer saying "COMMITMENT: practical, evidence-based decarbonisation — reviewed annually" with today's date on the right.
+
+Style: clean industrial sans-serif, thin outline icons (excavator, drop, leaf, plug), navy-bronze with green accent. Fill the entire A4 page.<button class="copy" onclick="cp(this)">Copy</button></div>
+
  </div>
 </div>
 </main>
