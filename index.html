@@ -381,15 +381,40 @@ td a{color:var(--ink);font-weight:600}td a:hover{color:var(--accent2)}
 
 
 <section id="ex1">
-<div class="modulehead"><div class="num">1</div><h2>Exercise 1 · Daily Briefing<small>Copilot Chat · HTML dashboard</small></h2></div>
-<div class="callout good"><b>How a GM starts the day in 2 minutes.</b> Open <a href="https://m365.cloud.microsoft" target="_blank">Microsoft 365 Copilot Chat</a> and switch the mode dropdown to <b>Cowork</b>. Cowork can ground on your tenant signals (emails, chats, calendar, files) <i>and</i> render an inline HTML preview you can open straight away. Paste the prompt below.</div>
+<div class="modulehead"><div class="num">1</div><h2>Exercise 1 · Daily Briefing<small>Two flavours · Wordy &amp; Dashboard</small></h2></div>
+<div class="callout good"><b>How a GM starts the day in 2 minutes.</b> Pick the flavour that fits the morning — a quick conversational read (Option A) or a one-screen visual dashboard (Option B). Both ground on the same tenant signals: your emails, Teams chats, calendar and recent files.</div>
 
 <div class="card">
-<p class="lead">One prompt. Copilot reads your inbox, calendar, Teams chats and recent files — and hands the General Manager · Operations a one-screen visual dashboard for the day. No 30-minute catch-up over coffee.</p>
+<p class="lead">Copilot reads your inbox, calendar, Teams chats and recent files — and hands the General Manager · Operations a single, structured briefing for the day. No 30-minute catch-up over coffee.</p>
 
 <div class="activity">
- <div class="head"><span class="num">Task 1.1</span><span class="file">🚀 Copilot Chat · Cowork</span></div>
+ <div class="head"><span class="num">Task 1.1</span><span class="file">🔍 Option A · Researcher · Wordy briefing</span></div>
+ <h4>Generate today&#39;s GM daily briefing (text)</h4>
+ <p>Open <a href="https://m365.cloud.microsoft" target="_blank">Microsoft 365 Copilot</a> → click <b>Researcher</b>. Keep the model picker on <b>Auto</b> (Critique — dual-model with self-review). Paste:</p>
+ <div class="prompt">Help me prepare for today. Look at my emails, Teams messages, calendar and recent files, and put together a short daily briefing for me as General Manager.
+
+Open with a quick personal greeting — just a couple of sentences telling me what kind of day I&#39;m walking into.
+
+Then walk me through:
+• What changed since I left the office yesterday — only the things that genuinely affect my work or my team.
+• What I need to get done today — tasks or questions that are on my plate. Skip anything that&#39;s already been closed out.
+• Unread email threads from the past week that probably need a reply from me — focus on ones where I&#39;m directly involved (To, CC, @mentioned) or where there&#39;s a request, deadline, leadership or customer angle. Skip the automated noise. Show me only the urgent or important ones in a tidy little table, and draft a short reply for each. If there&#39;s nothing to reply to, just say so.
+• What&#39;s on my calendar today — only upcoming meetings, in a table: meeting (time, title, organiser), what it&#39;s about, and how I should prepare. Tell me if you&#39;re inferring the prep or if I don&#39;t really need to prep.
+
+Stick to what you can actually see in my emails, files and calendar — no guessing. If a section is empty, just say it&#39;s empty.
+
+Title it &quot;Daily briefing – &lt;day&gt;, &lt;date&gt;&quot; with a small line underneath showing the time you generated it, and put a relevant emoji at the start of each section.
+
+At the very top of the briefing, before everything else, please also include an illustration that captures what today actually looks like for me. You decide the style — it could be a sketched scene, a small collage, an iso-style vignette, a pictogram set, an abstract composition, whatever feels right. The only things I care about: it should reflect the real substance of today&#39;s briefing (not a generic office or sunrise picture), it should be a wide banner shape, it should use our Contoso Mining Services brand feel — warm orange and dark slate as the lead colours with neutral supporting tones — and please keep any words inside the image to a minimum. Add a small grey caption underneath: &quot;Today at a glance · Contoso Mining Services&quot;.
+
+Please don&#39;t ask me any clarifying questions — just go ahead and produce the whole briefing in one go. Keep it tight.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout warn"><b>Reality check on the illustration:</b> Researcher is primarily a text + tables + citations surface. Inline image generation is best-effort — on some tenants it renders an illustration, on others it falls back to an emoji banner or a placeholder line. If the image doesn&#39;t appear, follow up with: <i>&quot;Generate the illustration described above as a separate image I can download.&quot;</i></div>
+</div>
+
+<div class="activity">
+ <div class="head"><span class="num">Task 1.1 · alt</span><span class="file">🚀 Option B · Copilot Chat (Cowork) · HTML dashboard</span></div>
  <h4>Generate today&#39;s GM daily briefing as an HTML dashboard</h4>
+ <p>Open <a href="https://m365.cloud.microsoft" target="_blank">Microsoft 365 Copilot Chat</a> and switch the mode dropdown to <b>Cowork</b>. Cowork can ground on your tenant signals <i>and</i> render an inline HTML preview. Paste:</p>
  <div class="prompt">Generate my GM daily briefing for today as a single-page interactive HTML dashboard, grounded on my emails, Teams chats, calendar and recent files.
 
 Layout (all on one screen, no scrolling on a laptop):
@@ -416,8 +441,8 @@ Do not ask me any clarifying questions. Proceed directly and produce the dashboa
 <div class="activity bonus">
  <div class="head"><span class="num">Bonus</span><span class="file">🔍 Researcher · follow-up</span></div>
  <h4>Drill in on the single most important item</h4>
- <p>Pick one item from the dashboard that needs deeper thinking. Switch to <b>Researcher</b> and ask:</p>
- <div class="prompt">Take the highest-priority item from my daily briefing dashboard. Pull together everything I&#39;ve received on it in the last 14 days — emails, chats, files, meeting notes. Summarise the current state in 5 bullets, list the open decisions, and draft one short message I should send today to move it forward.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <p>Pick one item from the briefing (either flavour) that needs deeper thinking. Switch to <b>Researcher</b> and ask:</p>
+ <div class="prompt">Take the highest-priority item from my daily briefing. Pull together everything I&#39;ve received on it in the last 14 days — emails, chats, files, meeting notes. Summarise the current state in 5 bullets, list the open decisions, and draft one short message I should send today to move it forward.<button class="copy" onclick="cp(this)">Copy</button></div>
 </div>
 </div>
 </section>
