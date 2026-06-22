@@ -138,6 +138,24 @@ td a{color:var(--ink);font-weight:600}td a:hover{color:var(--accent2)}
 .modal .close:hover{background:var(--badge-bg);color:var(--ink)}
 .modal .prompt{margin-top:10px}
 @media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
 </style></head>
 <body>
 <div id="lock">
@@ -481,9 +499,9 @@ Do not ask me any clarifying questions — produce it in one pass.<button class=
 <div class="bonus-grid">
 <button class="bcard" onclick="openModal('vendor-kak')">
  <span class="ico">📑</span>
- <span class="tag">Vendor management</span>
- <h4>Vendor KAK summarisation</h4>
- <p>Drop a KAK (Kerangka Acuan Kerja) into Copilot Chat and get a procurement-ready summary — scope, deliverables, KPIs, risks and the one line you'd actually negotiate on.</p>
+ <span class="tag">Tender · EPC</span>
+ <h4>Vendor vs KAK comparison</h4>
+ <p>One PowerPoint slide, four bidders, KAK match score — with each vendor name as a clickable hyperlink to their bid pack on SharePoint. Visual, emailable, clickable.</p>
  <span class="cta">OPEN →</span>
 </button>
 <button class="bcard" onclick="openModal('mail-merge')">
@@ -528,21 +546,76 @@ Do not ask me any clarifying questions — produce it in one pass.<button class=
 <div class="modal-overlay" id="modal-vendor-kak" onclick="if(event.target===this)closeModal('vendor-kak')">
  <div class="modal">
   <button class="close" onclick="closeModal('vendor-kak')" aria-label="Close">×</button>
-  <h3>📑 Vendor KAK summarisation</h3>
-  <p class="sub">Copilot Chat · grounded on file</p>
-  <div class="prompt">Summarise this KAK (Kerangka Acuan Kerja) document for a GM-level read. Produce:
+  <h3>📑 Vendor vs KAK comparison</h3>
+  <p class="sub">Cowork → PowerPoint Copilot</p>
+  <h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Primary · PowerPoint slide with hyperlinks</h4><div class="prompt">Add ONE new slide titled "EPC Tender — Vendor vs KAK Match" for Contoso Mining Services.
 
-1. One-sentence headline: what is the vendor being asked to deliver and by when.
-2. Scope at a glance — 5 bullets max.
-3. Deliverables table: deliverable · owner · due date · acceptance criteria.
-4. Commercial terms — payment milestones, penalties, retention.
-5. KPIs and SLAs the vendor is held to.
-6. Risk flags — anything ambiguous, missing, or commercially weak. Be blunt.
-7. The one line I would push back on if I were the GM reviewing this before signature.
+Body of the slide = a single table with 4 vendor rows and these columns:
+ • Vendor (the vendor name in this cell must be a clickable hyperlink — see URL list below)
+ • Reference projects (last 5 yrs · count + flagship)
+ • Engineering bench (head-count + key disciplines)
+ • Timeline vs KAK (months ± vs the 18-month KAK)
+ • Cost band vs KAK budget (within / above / below)
+ • HSE record (LTI rate, last 3 yrs)
+ • KAK match score — cell-shaded green ≥ 85%, amber 70–84%, red &lt; 70%
 
-Use Indonesian terminology where the source uses it (e.g. KAK, BAST, Berita Acara). Cite the page or section for every claim.
+Vendors:
+ 1. Borneo EPC Specialists
+ 2. Trans-Asia Engineers
+ 3. NusaWorks Industrial
+ 4. PrimeBuild Indonesia
+
+Below the table, add three short callout boxes: recommended bidder · watch-out · decision-by date.
+
+Use the slide's existing colour theme — our Contoso Mining Services brand feel, warm orange and dark slate, with a deep navy header row. Make the table fill the slide body — no empty space.
+
+Vendor SharePoint URLs (use these as the hyperlink target for each vendor name — leave the cell unlinked if I haven't pasted one):
+ • Borneo EPC Specialists: [PASTE THE SHAREPOINT SHARE LINK HERE]
+ • Trans-Asia Engineers: [PASTE THE SHAREPOINT SHARE LINK HERE]
+ • NusaWorks Industrial: [PASTE THE SHAREPOINT SHARE LINK HERE]
+ • PrimeBuild Indonesia: [PASTE THE SHAREPOINT SHARE LINK HERE]
 
 Do not ask me any clarifying questions — proceed.<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Optional · Tender Capability One-Pager infographic (Copilot Create)</h4><div class="prompt">Make a premium, magazine-style one-page infographic poster called "Tender Capability One-Pager — Top 3 Reasons to Award the EPC Scope to Us". Tall vertical page that fills top to bottom — no empty space at the bottom. Use a serious, premium look: deep navy as the dominant colour, with warm bronze and gold accents on a clean white background. Think Bloomberg Businessweek or a high-end corporate tender brochure — confident, evidence-led, no cartoon illustrations.
+
+At the very top, a wide hero banner: on the left, a small bronze laurel/wreath ornament; in the centre, a large bold all-caps title "CONTOSO MINING SERVICES"; on the right, a small stylised silhouette of an industrial site (haul truck or excavator outline, no photo). Directly below the title, a slim navy ribbon with three short pills: "TIER-1 SAFETY · 27-YEAR TRACK RECORD · 78% LOCAL CONTENT".
+
+Then a row of 5 small icons with one-line labels for "BEST FOR:" — Open-pit mining · EPC &amp; infrastructure · O&amp;M services · Brownfield upgrades · Low-carbon mining pilots.
+
+Then the centrepiece — three large numbered cards side by side, each card with a numbered medallion (1 gold, 2 silver, 3 bronze) and a small ribbon header:
+
+Card 1 (gold ribbon) — "BEST OVERALL · OPEN-PIT MINING"
+Location pin: East Kalimantan · 27 years operating
+4 green-tick bullets: precision drill &amp; blast; 400+ unit haul fleet; mine planning &amp; dewatering; progressive reclamation
+Indicative scope box: "USD 280M – USD 450M per 5-yr contract"
+One-line recommendation: "The safest choice for proven, large-scale coal &amp; metals contracts."
+
+Card 2 (silver ribbon) — "SPECIALIST · EPC &amp; INFRASTRUCTURE"
+Location pin: Java &amp; Sulawesi · USD 1.2B delivered
+4 green-tick bullets: plant erection &amp; commissioning; jetty, conveyor, power plant; modular fabrication yard; brownfield upgrades
+Indicative scope box: "USD 120M – USD 380M per package"
+One-line recommendation: "Best fit for nickel downstream and process-plant tenders."
+
+Card 3 (bronze ribbon) — "FASTEST · SERVICES &amp; O&amp;M"
+Location pin: Multi-site · 14 active contracts
+4 green-tick bullets: equipment maintenance contracts; logistics &amp; supply chain; asset performance monitoring; certified operator training
+Indicative scope box: "USD 18M – USD 60M per year"
+One-line recommendation: "The quickest path to availability uplift on an existing fleet."
+
+Then a horizontal comparison table called "CAPABILITY COMPARISON AT A GLANCE" — 6 rows (Track record, Safety record, Engineering bench, Local content, Cost competitiveness, Speed of mobilisation) and 3 columns (Open-Pit Mining, EPC &amp; Infra, O&amp;M Services). Inside the cells, use 5-star ratings (filled gold stars, empty grey stars) instead of words. The recommended-strongest cell in each row has a thin gold border.
+
+To the right of the table, a small "TIPS &amp; CHECKLIST" column with 5 line items, each with a tiny icon — what a good tender response looks like: 1. submit reference projects in last 5 years · 2. compliance matrix mapped to KAK clauses · 3. HSE statistics for the last 3 years · 4. project schedule with critical-path milestones · 5. one-page commercial summary.
+
+Then a slim strip across the page called "SELECTED PROJECT REFERENCES (ANONYMISED)" — 4 small cards in a row, each with a tiny location-pin icon, anonymised client (e.g. "Coal Major #1"), scope (e.g. "Hauling · 5 yrs"), value (e.g. "USD 420M"), and a one-line outcome.
+
+Then a strip called "CERTIFIED &amp; ACCREDITED" — a single row of greyscale logos / accreditation badges for ISO 9001, ISO 14001, ISO 45001, ICMM safety, and one Indonesia-specific accreditation. Each badge with a small caption underneath.
+
+At the very bottom, a deep navy CTA ribbon spanning the full width: on the left in gold, "CONTACT: Tender Office · RESPONSE SLA: 5 WORKING DAYS · CAPACITY: AVAILABLE Q2 FY26"; on the right, today's date.
+
+Style notes for the designer: clean industrial sans-serif headings, slimmer serif or sans for body, plenty of white space between cards, thin outline icons (excavator, drill, helmet, plant, ship, leaf, gear), no clip-art, no stock photos of people. Premium-tender magazine feel — every section must be sized so the page fills completely from top to bottom with no empty gap.
+
+Do not ask me any clarifying questions — proceed.<button class="copy" onclick="cp(this)">Copy</button></div>
+
  </div>
 </div>
 <div class="modal-overlay" id="modal-mail-merge" onclick="if(event.target===this)closeModal('mail-merge')">
