@@ -462,6 +462,24 @@ td a{color:var(--ink);font-weight:600}td a:hover{color:var(--accent2)}
 .modal .close:hover{background:var(--badge-bg);color:var(--ink)}
 .modal .prompt{margin-top:10px}
 @media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
 </style></head>
 <body>
 <div id="lock">
@@ -835,6 +853,35 @@ Style: modern editorial infographic, dense but readable, soft shadows, rounded 1
 
 Generate the portrait, skyline backdrop, every section icon and timeline icon — no blank boxes. Fill every panel. Produce as one downloadable image. No clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
  <div class="callout warn"><b>Reality check:</b> web search inside Copilot Chat is lighter than Researcher — fewer sources, less cross-checking. Fine for a demo or internal poster; for board-facing, run Researcher first then hand the brief to Create.</div>
+</div>
+
+<div class="activity" style="margin-top:14px">
+ <div class="head"><span class="num">Task 4.2 v2</span><span class="file">💬 Copilot Chat · attached CV + photo</span></div>
+ <h4>Fallback — build it from your own CV and your own photo</h4>
+ <p>If web search in Option B returns thin results (common for people who keep a low public profile), drop the web step and feed Copilot your own files instead. In <a href="https://m365.cloud.microsoft" target="_blank">Microsoft 365 Copilot Chat</a>, attach two things using the paperclip / "Add content": (1) your latest CV (Word, PDF or LinkedIn export) and (2) a head-and-shoulders photo of yourself. Then paste:</p>
+ <div class="prompt">Build me a rich, detailed one-page leadership infographic poster (landscape A3, dense magazine-style layout) for [YOUR FULL NAME], [YOUR CURRENT ROLE] at [YOUR COMPANY].
+
+Use the two files I have attached as the only source of truth:
+• My CV — pull the tagline, career highlights with real numbers, industry &amp; functional expertise, challenges, lessons, journey timeline, and any quote I have on the document. Do not invent anything that is not on my CV; where a section is blank, write "Not on file" rather than guessing.
+• My photo — use it as-is for the hero portrait. Crop into a clean circular mask. Do not regenerate or "improve" my face.
+
+Then render the poster, structured as follows:
+
+Hero band: big title pulled from my CV positioning (or "Leadership is a Journey of Growth, Impact &amp; Purpose" if my CV has no tagline), subtitle = my 2-line tagline, my attached photo on the right (circular mask), with a panoramic backdrop blending an industry-relevant scene and a skyline of the city I am based in. Drop location pins for the cities listed in my CV.
+
+Body — 8 panels arranged 4 left, 4 right, each a rounded card with a small icon, heading, and 3-5 bullets:
+LEFT: Leadership Evolution (Traditional vs Future, 2 columns), Industry Expertise (4 chips), Functional Expertise (4 chips), Real-World Challenges (3 blurbs).
+RIGHT: Key Achievements (4 bold stat callouts from my CV), The Future I Lead (3 bullets), Lessons Learned (3 italic maxims), Key Takeaways (3 punchy lines).
+
+Bottom strip: "My Leadership Journey" — horizontal 5-step timeline drawn from my CV's career history, with year ranges and a one-line lesson per step.
+
+Footer band: name + role + company on the left, my quote (or "Safety first, production always" if not on file) in italic in the centre, contact handles from my CV on the right.
+
+Style: modern editorial infographic, dense but readable, soft shadows, rounded 12px corners, McKinsey-meets-National-Geographic. Use my company brand colour if I have one; otherwise deep navy + warm accent.
+
+Generate the skyline backdrop, every section icon and timeline icon — no blank boxes. Use my real photo for the portrait. Fill every panel. Produce as one downloadable image. No clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+ <div class="callout"><b>Why this version:</b> your real CV + your real face = a poster you can actually hand to a client or post on LinkedIn without a privacy or "is that really me" conversation. No web search means no [INFERRED] tags and no sources you didn't approve.</div>
+ <div class="callout warn"><b>File limits:</b> a single CV up to a few MB and one head-and-shoulders photo is the sweet spot. If your photo is a full-body shot, crop it first — Copilot will use whatever you give it.</div>
 </div>
 </div>
 </section>
