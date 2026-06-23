@@ -390,6 +390,24 @@ td a{color:var(--ink);font-weight:600}td a:hover{color:var(--accent2)}
 .modal .close:hover{background:var(--badge-bg);color:var(--ink)}
 .modal .prompt{margin-top:10px}
 @media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
 </style></head>
 <body>
 <div id="lock">
@@ -844,45 +862,33 @@ Below the table, add three short callout boxes: recommended bidder · biggest wa
 Use the slide's existing colour theme — our Contoso Mining Services brand feel, warm orange and dark slate, with a deep navy header row. Make the table fill the slide body — no empty space.
 
 Do not invent numbers — pull every figure from the referenced files and cite the source file in a small footnote on the slide. Do not ask me any clarifying questions — proceed.<button class="copy" onclick="cp(this)">Copy</button></div>
-<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Optional · Tender Capability One-Pager infographic (Copilot Create)</h4><div class="prompt">Make a premium, magazine-style one-page infographic poster called "Tender Capability One-Pager — Top 3 Reasons to Award the EPC Scope to Us". Tall vertical page that fills top to bottom — no empty space at the bottom. Use a serious, premium look: deep navy as the dominant colour, with warm bronze and gold accents on a clean white background. Think Bloomberg Businessweek or a high-end corporate tender brochure — confident, evidence-led, no cartoon illustrations.
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Optional · Tender Capability One-Pager infographic (Copilot Create)</h4><div class="prompt">Make a modern, magazine-style one-page infographic poster called "Why Award the EPC Scope to Contoso Mining Services" — landscape A3, dense editorial layout, every section filled, no empty space.
 
-At the very top, a wide hero banner: on the left, a small bronze laurel/wreath ornament; in the centre, a large bold all-caps title "CONTOSO MINING SERVICES"; on the right, a small stylised silhouette of an industrial site (haul truck or excavator outline, no photo). Directly below the title, a slim navy ribbon with three short pills: "TIER-1 SAFETY · 27-YEAR TRACK RECORD · 78% LOCAL CONTENT".
+Look and feel: warm orange as the lead accent, dark slate as the structural colour, cream / off-white background, friendly approachable feel — think a contemporary McKinsey-meets-National-Geographic infographic, not a stuffy tender brochure. Modern sans-serif throughout, rounded 12px corners, soft shadows, big numbers, bold short labels, generous use of small thin-outline icons.
 
-Then a row of 5 small icons with one-line labels for "BEST FOR:" — Open-pit mining · EPC &amp; infrastructure · O&amp;M services · Brownfield upgrades · Low-carbon mining pilots.
+Hero band across the top:
+• Left: bold title "Why Award the EPC Scope to Contoso Mining Services" (2 lines, slate) with a 1-line subtitle in warm orange: "Tier-1 safety · 27-year track record · 78% local content."
+• Right: an illustrated panoramic scene blending an Indonesian open-pit mine, haul trucks, a conveyor and a faint city skyline. Drop 4 small location pins labelled Balikpapan, Sorowako, Timika, Jakarta.
 
-Then the centrepiece — three large numbered cards side by side, each card with a numbered medallion (1 gold, 2 silver, 3 bronze) and a small ribbon header:
+Body grid — dense magazine layout, every panel a rounded card with a small icon, heading, and 3-5 short bullets or big numbers:
 
-Card 1 (gold ribbon) — "BEST OVERALL · OPEN-PIT MINING"
-Location pin: East Kalimantan · 27 years operating
-4 green-tick bullets: precision drill &amp; blast; 400+ unit haul fleet; mine planning &amp; dewatering; progressive reclamation
-Indicative scope box: "USD 280M – USD 450M per 5-yr contract"
-One-line recommendation: "The safest choice for proven, large-scale coal &amp; metals contracts."
+LEFT COLUMN (top to bottom):
+1. "Top 3 Reasons" — three side-by-side mini-cards (numbered 1, 2, 3 in warm orange circles), each with a 1-line headline + 2 short evidence bullets: (1) Proven open-pit scale, (2) Engineering bench depth, (3) Lowest HSE incident rate among peers.
+2. "Capability Snapshot" — 4 big-number stat callouts: 27 yrs operating · 14 active sites · 1,200+ people · LTI 0.19 / 200k hrs.
+3. "Best For" — 5 small icon chips with one-line labels: Open-pit mining · EPC &amp; infrastructure · O&amp;M services · Brownfield upgrades · Low-carbon pilots.
 
-Card 2 (silver ribbon) — "SPECIALIST · EPC &amp; INFRASTRUCTURE"
-Location pin: Java &amp; Sulawesi · USD 1.2B delivered
-4 green-tick bullets: plant erection &amp; commissioning; jetty, conveyor, power plant; modular fabrication yard; brownfield upgrades
-Indicative scope box: "USD 120M – USD 380M per package"
-One-line recommendation: "Best fit for nickel downstream and process-plant tenders."
+RIGHT COLUMN (top to bottom):
+4. "Capability at a Glance" — a clean comparison table, 4 rows (Track record, Safety, Engineering bench, Local content) x 3 columns (Open-Pit, EPC, O&amp;M). Use filled / empty dot ratings (4 of 4) instead of stars or words. Highlight the strongest cell per row with a soft warm-orange background fill.
+5. "Selected References" — 3 small project cards in a row: tiny pin icon + anonymised client ("Coal Major #1") + scope ("Hauling · 5 yrs") + value ("USD 420M") + 1-line outcome.
+6. "Certified" — a clean row of small accreditation chips: ISO 9001, ISO 14001, ISO 45001, ICMM, SMK3.
 
-Card 3 (bronze ribbon) — "FASTEST · SERVICES &amp; O&amp;M"
-Location pin: Multi-site · 14 active contracts
-4 green-tick bullets: equipment maintenance contracts; logistics &amp; supply chain; asset performance monitoring; certified operator training
-Indicative scope box: "USD 18M – USD 60M per year"
-One-line recommendation: "The quickest path to availability uplift on an existing fleet."
+Bottom strip:
+• Left: warm orange CTA "Contact: Tender Office · Response SLA: 5 working days · Capacity: Available Q2 FY26".
+• Right: today's date in slate.
 
-Then a horizontal comparison table called "CAPABILITY COMPARISON AT A GLANCE" — 6 rows (Track record, Safety record, Engineering bench, Local content, Cost competitiveness, Speed of mobilisation) and 3 columns (Open-Pit Mining, EPC &amp; Infra, O&amp;M Services). Inside the cells, use 5-star ratings (filled gold stars, empty grey stars) instead of words. The recommended-strongest cell in each row has a thin gold border.
+Style rules: warm and confident, not corporate-stuffy. No laurel wreaths, no Roman numerals, no medallion ribbons, no greyscale corporate logos. Generate the hero scene, location pins and every small icon — do not leave placeholders. Fill every panel; do not collapse sections. Produce as one downloadable image.
 
-To the right of the table, a small "TIPS &amp; CHECKLIST" column with 5 line items, each with a tiny icon — what a good tender response looks like: 1. submit reference projects in last 5 years · 2. compliance matrix mapped to KAK clauses · 3. HSE statistics for the last 3 years · 4. project schedule with critical-path milestones · 5. one-page commercial summary.
-
-Then a slim strip across the page called "SELECTED PROJECT REFERENCES (ANONYMISED)" — 4 small cards in a row, each with a tiny location-pin icon, anonymised client (e.g. "Coal Major #1"), scope (e.g. "Hauling · 5 yrs"), value (e.g. "USD 420M"), and a one-line outcome.
-
-Then a strip called "CERTIFIED &amp; ACCREDITED" — a single row of greyscale logos / accreditation badges for ISO 9001, ISO 14001, ISO 45001, ICMM safety, and one Indonesia-specific accreditation. Each badge with a small caption underneath.
-
-At the very bottom, a deep navy CTA ribbon spanning the full width: on the left in gold, "CONTACT: Tender Office · RESPONSE SLA: 5 WORKING DAYS · CAPACITY: AVAILABLE Q2 FY26"; on the right, today's date.
-
-Style notes for the designer: clean industrial sans-serif headings, slimmer serif or sans for body, plenty of white space between cards, thin outline icons (excavator, drill, helmet, plant, ship, leaf, gear), no clip-art, no stock photos of people. Premium-tender magazine feel — every section must be sized so the page fills completely from top to bottom with no empty gap.
-
-Do not ask me any clarifying questions — proceed.<button class="copy" onclick="cp(this)">Copy</button></div>
+Do not ask me any clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
 
  </div>
 </div>
